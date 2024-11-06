@@ -1,0 +1,33 @@
+{
+  "name": "mp_realm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AncilBenny/mp_realm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AncilBenny/mp_realm/issues"
+  },
+  "homepage": "https://github.com/AncilBenny/mp_realm#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "joi": "^17.12.2",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.2.4",
+    "multer": "^1.4.5-lts.1",
+    "natural": "^7.0.5",
+    "nodemon": "^3.1.0",
+    "uuid": "^9.0.1"
+  }
+}

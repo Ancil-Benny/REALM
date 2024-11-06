@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+   
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="adminprofile.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="icon-wrapper">
+            <i class='bx bx-user' id="selectusers"></i>
+            <span class="icon-label">Users</span>
+        </div>
+        <div class="icon-wrapper">
+            <i class='bx bx-box' id="selectitems"></i>
+            <span class="icon-label">Items</span>
+        </div>
+        <div class="icon-wrapper">
+            <i class='bx bx-mail-send'id="selecttickets"></i>
+            <span class="icon-label">Tickets</span>
+        </div>
+        <div class="icon-wrapper">
+            <i class='bx bx-envelope'id="myreportshift"></i>
+            <span class="icon-label">Feedbacks</span>
+        </div>
+        <div class="icon-wrapper">
+            <i class='bx bx-list-ul'id="listingpage"></i>
+            <span class="icon-label">Listed</span>
+        </div>
+        <div class="icon-wrapper">
+            <i class='bx bx-chat'></i>
+            <span class="icon-label">Discussion</span>
+        </div>
+        <div class="icon-wrapper">
+            <i class='bx bx-log-out'></i>
+            <span class="icon-label"id="logoutuser">Logout</span>
+        </div>
+    </div>
+<!---------------------------------------------------------------->
+    
+<!---------------------------------------------------------------->
+ <div id="overlay"></div>
+ <div class="main">
+    <div class="usercontainer">
+        <div class="navbar">
+            <div class="navbar-item"id="students">Students</div>
+            <div class="navbar-item"id="faculty">Faculty</div>
+          </div>
+    <div class="stdcontainer">
+            <div class="stdheader">
+                <span>S.No</span>
+                <span>Name</span>
+                <span>Email</span>
+                <span>Dept</span>
+                <span>Semester</span>
+                <span>Edit</span>
+                <span>_</span>
+                <span>Status</span>
+            </div>
+       </div> 
+       <div class="faccontainer" style="display: none;">
+        <div class="stdheader">
+            <span>S.No</span>
+            <span>Name</span>
+            <span>Email</span>
+            <span>Dept</span>
+            <span>Semester</span>
+            <span>Edit</span>
+            <span>_</span>
+            <span>Status</span>
+        </div>
+    </div> 
+    </div>
+     <!---------------------------------------------------------------->
+ <div class="itemcontainer" style="display: none;">
+    <div class="navbar">
+        <div class="navbar-item" id="listed">Listed Items</div>
+        <div class="navbar-item" id="requested">Requested Items</div>
+      </div>
+    <div class="listedcontainer">
+        <div class="listheader">
+            <span>S.No</span>
+            <span>Name</span>
+            <span>Email</span>
+            <span>Dept</span>
+            <span>Semester</span>
+            <span>Edit</span>
+            <span>_</span>
+            <span>Status</span>
+        </div>
+    </div>
+    <div class="requestedcontainer" style="display: none;">
+        <div class="listheader">
+            <span>S.No</span>
+            <span>Name</span>
+            <span>Email</span>
+            <span>Dept</span>
+            <span>Semester</span>
+            <span>Edit</span>
+            <span>_</span>
+            <span>Status</span>
+        </div>
+    </div>
+ </div>
+ <!---------------------------------------------------------------->
+ <div class="raisecontainer" style="display: none;">
+
+ </div>
+ <!---------------------------------------------------------------->
+ </div>
+<!---------------------------------------------------------------->
+<script>
+    
+    document.getElementById('selectusers').addEventListener('click',function(){
+        document.querySelector('.itemcontainer').style.display = 'none';
+        document.querySelector('.raisecontainer').style.display = 'none';
+        document.querySelector('.usercontainer').style.display = 'block';
+        
+    });
+    
+    document.getElementById('selectitems').addEventListener('click',function(){
+        document.querySelector('.raisecontainer').style.display = 'none';
+        document.querySelector('.usercontainer').style.display = 'none';
+        document.querySelector('.itemcontainer').style.display = 'block';
+    });
+    document.getElementById('selecttickets').addEventListener('click',function(){
+        document.querySelector('.usercontainer').style.display = 'none';
+        document.querySelector('.itemcontainer').style.display = 'none';
+        document.querySelector('.raisecontainer').style.display = 'block';
+    });
+    //users--->switch a.
+    document.getElementById('students').addEventListener('click',function(){
+        document.querySelector('.stdcontainer').style.display = 'block';
+        document.querySelector('.faccontainer').style.display = 'none';
+    });
+    //users--->switch b.
+    document.getElementById('faculty').addEventListener('click',function(){
+        document.querySelector('.stdcontainer').style.display = 'none';
+        document.querySelector('.faccontainer').style.display = 'block';
+    });
+    //items--->switch a.
+    document.getElementById('listed').addEventListener('click',function(){
+        document.querySelector('.listedcontainer').style.display = 'block';
+        document.querySelector('.requestedcontainer').style.display = 'none';
+    });
+    //items--->switch b.
+    document.getElementById('requested').addEventListener('click',function(){
+        document.querySelector('.listedcontainer').style.display = 'none';
+        document.querySelector('.requestedcontainer').style.display = 'block';
+    });
+    </script>
+<!---------------------------------------------------------------->
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="adminprofile.js"></script>
+  </body>
+  </html>

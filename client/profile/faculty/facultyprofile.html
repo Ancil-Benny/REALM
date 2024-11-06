@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <link rel="stylesheet" href="facultyprofile.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="icon-wrapper">
+            <i class='bx bx-home-alt'></i>
+            <span class="icon-label">Home</span>
+        </div>
+        <div class="icon-wrapper">
+            <i class='bx bx-user'></i>
+            <span class="icon-label">My Requests</span>
+        </div>
+        <div class="icon-wrapper">
+            <i class='bx bx-plus'></i>
+            <span class="icon-label">My Reports</span>
+        </div>
+        <div class="icon-wrapper">
+            <i class='bx bx-list-ul'id="listingpage"></i>
+            <span class="icon-label">Listed</span>
+        </div>
+        <div class="icon-wrapper">
+            <i class='bx bx-chat'id="discussion"></i>
+            <span class="icon-label">Discussion</span>
+        </div>
+        <div class="icon-wrapper">
+            <i class='bx bx-log-out'></i>
+            <span class="icon-label"id="logoutuser">Logout</span>
+        </div>
+    </div>
+ <!---------------------------------------------------------------->
+ <div id="overlay"></div>
+    <div class="main">
+         <!---------------------------------------------------------------->
+         <div class="profilebox"><!--profile container-->
+            <div class="welcome">
+                <div class="bgwel">
+                <div class="welcon">
+                    <h1 id="prftitle">Hello <span id="prfwel">Welcome</span></h1>
+                    <img src="hello.svg" id="studentimg" alt="student">
+                </div>
+                <p id="prftext">explore your dashboard</p>
+                </div>
+            </div>
+            <div class="profileinfo"><!--profile info container-->
+               <div class="profileinfobox">
+                <div class="infoGroup">
+                    <h5 class="infotitle">Id</h5>
+                  <p class="info"id=Ktuid>cek21cs00</p>
+                </div>
+                <div class="infoGroup">
+                    <h5 class="infotitle">Name</h5>
+                    <p class="info"id="name">blanc</p>
+                </div>
+                <div class="infoGroup">
+                    <h5 class="infotitle">Dept</h5>
+                    <p class="info"id="dept">CSE</p>
+                </div>
+             
+                
+                <button class="updbtn" id="stdprfupd">Update Profile</button>
+              </div>
+            </div>
+        </div>
+         <!---------------------------------------------------------------->
+        <div class="navcon"><!--navbar and contribution container-->
+  
+          <div class="navbar">
+<form class="search1">
+    <i class="material-icons">search</i>
+    <input type="text" >
+   
+</form>
+            <div class="notification">
+                <i class="material-icons">notifications</i>
+            </div>
+            <img src="./ascend.png" id="profileimg" alt="Profile Image">
+        </div>
+
+        <div class="announcements">
+            <h6 class="contitles">Announcements - for faculty</h6>
+            <div class="announcementinfobox">
+                <h5 class="infotitlee">All discussion and announcement hub</h5>
+            <button class="announcementbtn">Explore</button>
+            </div>
+        </div>
+            <!---------------------------------------------------------------->
+      
+        </div>
+        <div class="listreqcont"style="display: block;">
+       <h6 class="contitles">My Requests <span style="font-weight: 400;font-size: 15px;">- Items you requested</span> </h6>
+      <div class="labgrp">
+        <h5 class="infotitlee">Type</h5>
+        <h5 class="infotitlee">Category</h5>
+        <h5 class="infotitlee">Description</h5>
+       
+        </div>
+        </div>
+        <!------------------------------------------>
+        <div class="graphgrid">
+            <div class="contribution">
+                <div class="myreportcont">
+                    <h6 class="contitles">My Lists <span style="font-weight: 400;font-size: 15px;">- Items you listed</span></h6>
+                   <div class="labgrp">
+                     <h5 class="infotitlee">Type</h5>
+                     <h5 class="infotitlee">Category</h5>
+                     <h5 class="infotitlee">Description</h5>
+                     <h5 class="infotitlee">Claims</h5>
+                    
+                     </div>
+                     </div>
+            </div>
+           
+        </div>
+        <!------------------------------------------------------------------------------->
+            <div class="profilecontainer">
+             
+  <div class="bw-form">
+    <div class="profile-pic-container">
+        <img id="profileImage" src="./ascend.png" alt="Profile Picture">
+        <i class="material-icons" id="editIcon" style="cursor:pointer;">edit</i>
+                  </div>
+                    <form>
+                        <input type="file" id="imageUpload" style="display:none;">
+                        <label for="imageUpload" id="uploadLabel" style="display:none;">Upload Image</label>
+                        <i id="close-btn" class="bx bx-x"></i>
+                      
+                        <div class="bw-input-group">
+                            <div class="bw-input">
+                                <label for="username">Username</label>
+                                <input type="text" id="username"readonly>
+                            </div>
+                            <div class="bw-input">
+                                <label for="firstname">First Name</label>
+                                <input type="text" id="firstname"readonly>
+                            </div>
+                        </div>
+                        <div class="bw-input-group">
+                            <div class="bw-input">
+                                <label for="lastname">Last Name</label>
+                                <input type="text" id="lastname"readonly>
+                            </div>
+                            <div class="bw-input">
+                                <label for="email">Email</label>
+                                <input type="email" id="email"readonly>
+                            </div>
+                        </div>
+                        <div class="bw-input-group">
+                            <div class="bw-input">
+                                <label for="oldpassword">Old Password</label>
+                                <input type="password" id="oldpassword"readonly>
+                            </div>
+                            <div class="bw-input">
+                                <label for="newpassword">New Password</label>
+                                <input type="password" id="newpassword"readonly>
+                            </div>
+                        </div>
+                        <div class="bw-input-group">
+                            <div class="bw-input">
+                                <label for="branch">Department</label>
+                                <input type="text" id="branch"readonly>
+                            </div>
+                        </div>
+                        <!-- Add more input groups as needed -->
+                        <button type="submit" class="bw-btn" style="display:none;">Submit</button>
+                    </form>
+                </div>
+            </div>
+           <!------------------------------------------------------------------------------->
+          
+    <!----------------------------------------------------------------------------------->   
+        <!--main and overlay-->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="facultyprofile.js"></script>
+</body>
+</html>

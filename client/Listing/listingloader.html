@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body {
+          font-family: sans-serif;
+          background: #000;
+          height: 100%;
+          overflow: hidden;
+        }
+        .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.scramble-container, .sentence-container {
+  margin:  0%;
+}
+        
+        span.scramble {
+          text-align: center;
+          display: inline-block;
+          line-height: 1.5em;
+          text-transform: uppercase;
+          color: #fff;
+          font-size: 5em;
+          font-weight: 700;
+          letter-spacing: 0.05em;
+        }
+        </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="scramble-container">
+          <span class="scramble">Loading...</span>
+        </div>
+        <div class="sentence-container">
+          <p id="sentence" style="color: #fff;"></p>
+        </div>
+      </div>
+     
+<script>
+
+let interval
+
+const element = document.querySelector('.scramble')
+const originalText = element.innerText
+
+const randomInt = max => Math.floor(Math.random() * max)
+const randomFromArray = array => array[randomInt(array.length)]
+
+const scrambleText = text => {
+  const chars = '*?><[]&@#)(.%$-_:/;?!'.split('')
+  return text
+    .split('')
+    .map(x => randomInt(3) > 1 ? randomFromArray(chars) : x)
+    .join('')
+}
+
+const startScrambling = () => {
+  interval = setInterval(() => {
+    element.innerText = scrambleText(originalText)
+  }, 100)
+}
+
+const stopScrambling = () => {
+  clearInterval(interval)
+  element.innerText = originalText
+}
+
+// Start scrambling immediately
+startScrambling()
+
+// Stop scrambling after 5 seconds and start again after 2 seconds
+setInterval(() => {
+  stopScrambling()
+  setTimeout(startScrambling, 2000) // delay before start scrambling again
+}, 5000)
+
+// Redirect after 5 seconds
+setTimeout(() => {
+  window.location.replace("listingnew.html")
+}, 5000)
+
+// Sentence rotation
+const sentences = [
+  "This is the first sentence.",
+  "Here's another sentence.",
+  "This is yet another sentence.",
+  // Add as many sentences as you want...
+]
+
+let index = 0
+const elementSentence = document.getElementById('sentence')
+
+const updateSentence = () => {
+  elementSentence.innerText = sentences[index]
+  index = (index + 1) % sentences.length
+}
+// Update the sentence immediately
+updateSentence()
+
+// Update the sentence every 2 seconds
+setInterval(updateSentence, 2000)
+    </script>
+</body>
+</html>

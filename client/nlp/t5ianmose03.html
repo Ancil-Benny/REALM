@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Generator</title>
+</head>
+<body>
+    <form id="productForm">
+        <label for="description">Item Description:</label><br>
+        <textarea id="description" name="description" rows="4" cols="50"></textarea><br>
+        <input type="submit" value="Generate Questions">
+    </form>
+      
+    <p id="result"></p>
+      
+    <script>
+    document.getElementById('productForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        var description = document.getElementById('description').value;
+
+        fetch('https://3ac0-34-74-187-122.ngrok-free.app/generate_questions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                description: description
+            }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('result').innerText = data.questions.join('\n');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('result').innerText = 'Failed to generate questions.';
+        });
+    });
+    </script>  
+</body>
+</html>

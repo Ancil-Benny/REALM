@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="p2p.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+    
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="header-info">
+                <i class='bx bx-arrow-back user-icon'></i>
+                <h2>Chat</h2>
+                <div class="infodata">
+                <h3 id="itemtitle">Item</h3>
+                </div>
+            </div>
+            <div class="header-actions">
+                <i class='bx bx-home'></i>
+                <i class='bx bx-user' id='user-icon'></i>
+                <div class="dropdown">
+                    <i class='bx bx-dots-vertical-rounded dropdown-toggle'></i>
+                    <div class="dropdown-menu">
+                        <a href="#" id="accepted">Accepted</a>
+                        <a href="#" id="close-chat">Close Chat</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Sidebar -->
+<div id="sidebar">
+ 
+</div>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+        </div>
+        <div class="chat-input">
+            
+            <input type="text" id="message-input" placeholder="Sent a message..."autocomplete="off">
+           
+            <button id="send-button"><i class='bx bx-send'></i></button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="p2p.js" defer></script>
+</body>
+</html>

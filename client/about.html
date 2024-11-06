@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>nil.dev</title>
+
+<style>
+#loading-screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #c9c8f7;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: opacity 0.7s, height 0s 0.7s;
+}
+
+#progress-bar {
+  width: 0;
+  height: 1px;
+  background-color: #000;
+}
+
+#progress-counter {
+  color: #000;
+  margin-top: 1rem;
+  font-size: 5rem;
+}
+ body {
+        
+        font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+            color: black;
+            background-color: #c9c8f7;
+            text-align: center;
+           
+        }
+        .container {
+            width: 75%;
+            margin: auto;
+           
+        }
+        .line {
+            width: 50%;
+            height: 1px;
+            background-color: black;
+            margin: 20px auto;
+        }
+       h1{
+        font-size: 100px;
+        font-weight: 800;
+        }
+    h2{
+        font-size: 30px;
+    }
+        h1, h2 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        p {
+            text-align: CENTER;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            
+        }
+        li {
+          
+            padding: 10px 0;
+            font-weight: bold;
+            font-weight: 400;
+        }
+        .logo {
+            display: block;
+            margin: 20px auto;
+            width: 50%;
+        }
+    h3{
+        font-size: 50px;
+        font-weight: 999;
+    
+    }
+    
+.back-button {
+  top:5%;
+  left: 2%;
+  width: 6.5em;
+  height: 2.3em;
+  background: transparent;
+  color: #000;
+  border: none;
+  border-radius: 0.625em;
+  font-size: 20px;
+  font-weight: 200;
+  cursor: pointer;
+  position: fixed;
+  z-index: 3;
+  overflow: hidden;
+ }
+ 
+ .back-button:hover {
+  color: #c9c8f7;
+  
+ }
+ 
+ .back-button:after {
+  content: "";
+  background: #000;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
+ }
+ 
+ .back-button:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+ }
+
+
+</style>
+<body>
+<!-- LOADING SCREEN -->
+<div id="loading-screen">
+  <div id="progress-bar"></div>
+  <div id="progress-counter">0%</div>
+</div>
+
+
+<!-- HUGE TEXTS + ABSOLUTE POSITIONING TO RELATIVE POSITIONING -->
+<div class="part1">
+  <button class="back-button">BACK</button>
+   <div class="container">
+    
+        <h1>About</h1>
+        <div class="line"></div>
+        <div>
+            <h2>DBMS LAB MINI-PROJECT</h2>
+            <p>Welcome to <b>[evtmgt]</b>
+                 your go-to event management platform. We empower organisers to seemlessly plan a variety of events including
+                  Bootcamps, Workshops, Webinars, Seminars, Contests and more. Our platform also invites users to actively participate in these  engaging events, fostering a community of learning, discovery and growth.</p>
+ <div class="line"></div>
+            <h2>Developed by <B>GP-11</B></h2>
+            <ul>
+                <li>ANCIL</li>
+                <h3>NIL</h3>
+                <li>2023 blanc</li>
+            </ul>
+           <!--<img class="logo" src="logo.png" alt="Logo">-->
+         
+        </div>
+        <div class="line"></div>
+        <div>
+            <h2>TECHSTACK AND SOURCES</h2>
+            <p>Built using Bootstrap with vanilla CSS, vanilla JS with jquery, nodeJS with Express, CORS and MYSQL<br><BR>FONTS :<br>Lato, sans-serif.<br>
+              Roboto, Helvetica Neue, Arial, sans-serif.<br>
+                  Poppins, sans-serif. <br>
+                  Favourit, sans-serif.<br><BR>
+                  Image Source: Adobe Stock<br><br>
+                  ICON PACKS: <br>Boxicons<br>
+                  Fontawesome.
+                  </p>
+            <div class="line"></div>
+            <p>2023 NIL</p>
+            
+        </div>
+    </div>
+
+
+
+<script>
+// LOADING SCREEN
+const progressBar = document.getElementById('progress-bar');
+const counter = document.getElementById('progress-counter');
+const loadingScreen = document.getElementById('loading-screen');
+const mainSection = document.querySelector('.part1');
+
+function updateProgress(progress) {
+  progressBar.style.width = `${progress}%`;
+  counter.textContent = `${progress}%`;
+}
+
+updateProgress(0);
+document.body.style.overflow = 'hidden';
+
+document.addEventListener('DOMContentLoaded', () => {
+  let progress = 0;
+  const increment = 10;
+
+  const updateLoop = setInterval(() => {
+    if (progress >= 100) {
+      clearInterval(updateLoop);
+      setTimeout(() => {
+        loadingScreen.style.display = 'none'; 
+    mainSection.style.opacity = '1';
+        document.body.style.overflowY = 'scroll';
+      }, 500);
+    }
+    updateProgress(progress);
+    progress += increment;
+  }, 50);
+});
+
+//backbutton
+
+let backButton = document.querySelector('.back-button');
+
+backButton.addEventListener('click', function() {
+    // Redirect to index.html
+    window.location.href = 'index.html';
+});
+</script>
+
+</body>
+
+</html>

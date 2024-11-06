@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css' rel="stylesheet">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+     <link rel="stylesheet" href="listingnew.css">
+   <title>Listing</title>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="dropdown">
+        <a class="dropbtn">LISTINGS</a>
+        <div class="dropdown-content">
+          <div id="listedlink">LISTED</div>
+          <div id="listedaddlink">ADD</div>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <a class="dropbtn">REQUESTS</a>
+        <div class="dropdown-content">
+        <div id="requestedlink">REQUESTED</div>
+        <div id="requestnewlink">NEW</div>
+        </div>
+    </div>
+
+    <div class="navrightelements">
+      <div id="navrighttextlink">ACCESS</div>
+    <div id="profilelink">profile</div>
+    </div>
+
+   <!--- <form action="" class="search-formmain">
+      <input type="search"  required placeholder="Search" >
+      <i class="fa fa-search"></i>
+    </form>-->
+
+</div>
+ <!-------------------------------------------------------------------------------->
+ <div class="arrow-container arrow-hidden">
+ <div class="arrow-container">
+  <i class='bx bxs-chevron-up'></i>
+</div>
+</div>
+ <div class="navbelowcontainer">
+  <div class="text-container">
+    <h1><span class="line">welcome</span><br><span class="line">find or list</span><br> <span class="line">your items</span></h1>
+    <p><span class="line">find the item from categories below or list the items you found or request a new item</span></p>
+</div>
+  <img src="./listmainimg2.jpg" alt="Description of image" class="nav-image">
+ </div>
+
+
+ 
+ <!------------------------------------------------------------------------------->
+
+ <div class="marquee category-container">
+  <div class="category stroke">Electronics</div>
+  <div class="category stroke">Accessories</div>
+  
+
+  
+</div>
+
+<div class="marquee2 category-container">
+  <div class="category fill">Stationery</div>
+  <div class="category fill">Fashion</div>
+  <div class="category fill">Documents</div>
+</div>
+
+    <!---------------------------------------------------->
+
+    <div class="search-container">
+      <form action="" class="search-formmain">
+        <input type="search" required placeholder="Search">
+      </form>
+      <button type="submit" class="search-button">Search</button>
+    </div>
+   <!----------------------------------------------------------------->
+    <div class="listedContainer">
+      <h1 class="ConHeadings">Listed Items</h1>
+      <P class="ConDesc">find your lost item reported here.</P>
+      <div class="container">
+        <p id="searchMessage"></p>
+ <!--cards-->
+ </div>
+  </div>
+    <!----------------------------------------------------------------->
+
+
+     <!-------------------------------------------------------------------------------->
+     <div class="addcontainer">
+      <h1 class="ConHeadings">Report New Items</h1>
+      <P class="ConDesc">report new item found from these categories</P>
+      <p id="searchMessage"></p>
+     <!--lists-->
+     </div>
+ <!-------------------------------------------------------------------------------->
+      <div class="requestsContainer">
+        <h1 class="ConHeadings">Requested Items</h1>
+        <P class="ConDesc">report a item requested here</P>
+        <div class="containerreq">
+          <p id="searchMessage"></p>
+       <!--creat card function is inherited from  listed container-->
+        </div>
+        </div>
+
+ <!-------------------------------------------------------------------------------->
+<div class="newcontainer">
+  <h1 class="ConHeadings">Add New Requests</h1>
+  <P class="ConDesc">add a new request for lost item from these categories</P>
+  <p id="searchMessage"></p>
+ <!--lists-->
+</div>
+ <!-------------------------------------------------------------------------------->
+ <div class="questioncontainer">
+  
+ <!--questions of new-->
+</div>
+ <!-------------------------------------------------------------------------------->
+ <div class="questioncontainernew">
+<!--questions of add-->
+ </div>
+   <!-------------------------------------------------------------------------------->
+ 
+<!-------------------------------------------------------------------------------->
+  <!-------------------------------------------------------------------------------->
+  <div class="dividercontainer">
+  
+      </div>
+  <!-------------------------------------------------------------------------------->
+  <div class="listsfooter">
+<div id="footerlogo">REALM</div>
+<div id="footertext">© 2024.Retrieval and Management System</div>
+  </div>
+  <!-------------------------------------------------------------------------------->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="listingnew.js"></script>
+</body>
+</html>

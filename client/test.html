@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .viewport {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+    }
+    .scrollable {
+      width: 80%;
+      height: 100%;
+      overflow-y: scroll;
+    }
+    .section {
+      height: 100vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      box-sizing: border-box;
+      background-color: #fff;
+      margin: 10vh 0;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      border-radius: 10px;
+    }
+    .number, .text {
+      width: 50%;
+    }
+    .number {
+      text-align: right;
+      font-size: 5em;
+      color: #007BFF;
+    }
+    .text {
+      color: #6c757d;
+      font-size: 1.5em;
+    }
+  </style>
+</head>
+<body>
+  <div class="viewport">
+    <div class="scrollable">
+      <div class="section">
+        <div class="number">1</div>
+        <div class="text">Content 1</div>
+      </div>
+      <div class="section">
+        <div class="number">2</div>
+        <div class="text">Content 2</div>
+      </div>
+      <div class="section">
+        <div class="number">3</div>
+        <div class="text">Content 3</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray('.section').forEach(section => {
+      const number = section.querySelector('.number');
+      const text = section.querySelector('.text');
+
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: 'top center',
+          end: 'bottom center',
+          scrub: true
+        }
+      })
+      .fromTo(number, { y: '100%' }, { y: '0%' })
+      .fromTo(text, { y: '100%' }, { y: '0%' }, '<');
+    });
+  </script>
+</body>
+</html>

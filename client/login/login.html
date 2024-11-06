@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body> 
+    <div class="cursor cursor--small"></div>
+
+<!----------------------------------------------------------------------->
+<nav>
+    <div class="logo"> LOGIN</div>
+    <ul class="nav-links">
+        <li><a href="../index.html" data-hover="HOME"><span>HOME</span></a></li>
+        <li><a href="#"id="stdconshow" data-hover="STUDENT"><span>STUDENT</span></a></li>
+        <li><a href="#" id="facconshow" data-hover="FACULTY"><span>FACULTY</span></a></li>
+        <li><a href="#"id="admconshow" data-hover="ADMIN"><span>ADMIN</span></a></li>
+       
+    </ul>
+    <div id="time-date" class="time-date"></div>
+</nav>
+<!----------------------------------------------------------------------->
+<div class="lgtxtcontainer">
+    <h1 class="lgtxt">Let's Create</h1>
+    <div class="linebreak"></div>
+    <h1 class="lgtxt" id="second">Your Acount  <div class="loader" ></div>
+    <p class="lgtxtp1"> 
+        Input the neccessary fields and upload ID for students</p>
+    </h1>
+    <div class="linebreak"></div>
+    <p class="bottomtext">Select your designation to create or login to your account.</p>
+     
+</div>
+<!----------------------------------------------------------------------->
+<div class="stdcontainer" style="display: none;">
+    <div class="form-box login">
+        <form id="myForm">
+            <div class="input-box">
+                <h2>Student Sign In</h2>
+                <div class="field">
+                    <span class="icon"><i class='bx bxs-envelope'></i></span>
+                    <input type="email" id="login-email" oninput="debouncedFillQuarters()"autocomplete="off" required>
+                    <label>Email</label>
+                </div>
+                <div class="field">
+                    <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                    <input type="password" id="login-password" oninput="debouncedFillQuarters()"autocomplete="off" required>
+                    <label>Password</label>
+                </div>
+            </div>
+            <div class="button-container">
+                <button type="button" id="login-btn">Login</button>
+                <div class="create-account">
+                    <p>Create A New Account? 
+                        <a href="#" class="register-link">Sign Up</a>
+                    </p>
+                </div>
+            </div>
+        </form>
+        <svg id="circleSVG"  class="myCircle" height="100" width="100">
+    <circle cx="50" cy="50" r="1" stroke="#000" stroke-width="3" fill="#112" />
+
+    <path id="circle" fill="none" stroke="black" stroke-width="3" />
+</svg>
+    </div>
+
+
+<!------------------------------------------------------------------------>
+<div class="form-box stdsu" style="display: none;">
+    <form id="signUpForm">
+        <h2 >Student Sign Up</h2>
+        <div class="row">
+            <div class="field">
+                <span class="icon"><i class='bx bxs-id-card'></i></span>
+                <input type="text" id="signup-ktuid" autocomplete="off" required oninput="debouncedFillQuartersSignUp()">
+                <label>Ktu Id</label>
+            </div>
+            <div class="field">
+                <span class="icon"><i class='bx bxs-user'></i></span>
+                <input type="text" id="signup-username" autocomplete="off" required oninput="debouncedFillQuartersSignUp()">
+                <label>UserName</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="field">
+                <span class="icon"><i class='bx bxs-user-circle'></i></span>
+                <input type="text" id="signup-dept" autocomplete="off" required oninput="debouncedFillQuartersSignUp()">
+                <label>Department</label>
+            </div>
+            <div class="field">
+                <span class="icon"><i class='bx bxs-envelope'></i></span>
+                <input type="email" id="signup-email" autocomplete="off" required oninput="debouncedFillQuartersSignUp()">
+                <label>Email</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="field">
+                <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                <input type="password" id="signup-password" autocomplete="off" required oninput="debouncedFillQuartersSignUp()">
+                <label>Password</label>
+            </div>
+            <div class="field">
+                <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                <input type="password" id="signup-confirm-password" autocomplete="off" required oninput="debouncedFillQuartersSignUp()">
+                <label>Confirm Password</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="field">
+                <span class="icon"><i class='bx bxs-image-add'></i></span>
+                <input type="file" id="signup-image" required oninput="debouncedFillQuartersSignUp()">
+                <label for="signup-image"id="image-label">Upload Image</label>
+            </div>
+            <div class="create-account">
+                <p>Already have an account? 
+                    <a href="#" class="login-link">Sign In</a>
+                </p>
+            </div>
+        </div>
+        <button type="button" id="signup-btn">Sign Up</button>
+    </form>
+    <!-- Add this SVG to your sign-up form -->
+    <svg id="circleSVGSignUp" class="myCircle" height="100" width="100">
+        <circle cx="50" cy="50" r="1" stroke="#000" stroke-width="3" fill="#112" />
+        <path id="circleSignUp" fill="none" stroke="black" stroke-width="3" />
+    </svg>
+</div>
+<!------------------------------------stdcon div 1------------------------------------->
+</div>
+<!------------------------------------------------------------------------>
+<div class="admincontainer" style="display: none;">
+    <div class="form-box admlogin">
+        <form id="myadmForm">
+            <div class="input-box">
+                <h2>Admin Sign In</h2>
+                <div class="field">
+                    <span class="icon"><i class='bx bxs-envelope'></i></span>
+                    <input type="email" id="admlogin-email" oninput="debouncedFillQuartersadmsi()"autocomplete="off" required>
+                    <label>Email</label>
+                </div>
+                <div class="field">
+                    <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                    <input type="password" id="admlogin-password" oninput="debouncedFillQuartersadmsi()"autocomplete="off" required>
+                    <label>Password</label>
+                </div>
+            </div>
+            <div class="button-container">
+                <button type="button" id="admlogin-btn">Login</button>
+                <div class="create-account">
+                    <p>Create A New Account? 
+                        <a href="#" class="admregister-link">Sign Up</a>
+                    </p>
+                </div>
+            </div>
+        </form>
+        <svg id="circleSVGadmsi"  class="myCircle" height="100" width="100">
+    <circle cx="50" cy="50" r="1" stroke="#000" stroke-width="3" fill="#112" />
+
+    <path id="circleadmsi" fill="none" stroke="black" stroke-width="3" />
+</svg>
+    </div>
+
+
+<!------------------------------------------------------------------------>
+<div class="form-box admsu" style="display: none;">
+    <form id="admsignUpForm">
+        <h2 >Admin Sign Up</h2>
+        <div class="row">
+            <div class="field">
+                <span class="icon"><i class='bx bxs-id-card'></i></span>
+                <input type="text" id="admsignup-id" autocomplete="off" required oninput="debouncedFillQuartersadmsu()">
+                <label>Admin Id</label>
+            </div>
+            <div class="field">
+                <span class="icon"><i class='bx bxs-user'></i></span>
+                <input type="text" id="admsignup-name" autocomplete="off" required oninput="debouncedFillQuartersadmsu()">
+                <label>Name</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="field">
+                <span class="icon"><i class='bx bxs-envelope'></i></span>
+                <input type="email" id="admsignup-email" autocomplete="off" required oninput="debouncedFillQuartersadmsu()">
+                <label>Email</label>
+            </div>
+            <div class="field">
+                <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                <input type="password" id="admsignup-password" autocomplete="off" required oninput="debouncedFillQuartersadmsu()">
+                <label>Password</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="field">
+                <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                <input type="password" id="admsignup-confirm-password" autocomplete="off" required oninput="debouncedFillQuartersadmsu()">
+                <label>Confirm Password</label>
+            </div>
+
+            <div class="create-account">
+                <p>Already have an account? 
+                    <a href="#" class="admlogin-link">Sign In</a>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+       
+        <button type="button" id="admsignup-btn">Sign Up</button>
+    </form>
+    <!-- Add this SVG to your sign-up form -->
+    <svg id="circleSVGadmsu" class="myCircle" height="100" width="100">
+        <circle cx="50" cy="50" r="1" stroke="#000" stroke-width="3" fill="#112" />
+        <path id="circleadmsu" fill="none" stroke="black" stroke-width="3" />
+    </svg>
+</div>
+<!------------------------------------admincon div------------------------------------->
+</div>
+
+<!----------------------------------------------------------------------->
+<!--faculty-->
+</div><!--unusual-->
+<div class="faccontainer" style="display: none;">
+    <div class="form-box faclogin">
+        <form id="myfacForm">
+            <div class="input-box">
+                <h2>Faculty Sign In</h2>
+                <div class="field">
+                    <span class="icon"><i class='bx bxs-envelope'></i></span>
+                    <input type="email" id="faclogin-email" oninput="debouncedFillQuartersfacsi()"autocomplete="off" required>
+                    <label>Email</label>
+                </div>
+                <div class="field">
+                    <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                    <input type="password" id="faclogin-password" oninput="debouncedFillQuartersfacsi()"autocomplete="off" required>
+                    <label>Password</label>
+                </div>
+            </div>
+            <div class="button-container">
+                <button type="button" id="faclogin-btn">Login</button>
+                <div class="create-account">
+                    <p>Create A New Account? 
+                        <a href="#" class="facregister-link">Sign Up</a>
+                    </p>
+                </div>
+            </div>
+        </form>
+        <svg id="circleSVGfacsi"  class="myCircle" height="100" width="100">
+    <circle cx="50" cy="50" r="1" stroke="#000" stroke-width="3" fill="#112" />
+
+    <path id="circlefacsi" fill="none" stroke="black" stroke-width="3" />
+</svg>
+    </div>
+
+
+<!------------------------------------------------------------------------>
+<div class="form-box facsu" style="display: none;">
+    <form id="facsignUpForm">
+        <h2 >Faculty Sign Up</h2>
+        <div class="row">
+            <div class="field">
+                <span class="icon"><i class='bx bxs-id-card'></i></span>
+                <input type="text" id="facsignup-id" autocomplete="off" required oninput="debouncedFillQuartersfacsu()">
+                <label>Faculty Id</label>
+            </div>
+            <div class="field">
+                <span class="icon"><i class='bx bxs-user'></i></span>
+                <input type="text" id="facsignup-name" autocomplete="off" required oninput="debouncedFillQuartersfacsu()">
+                <label>Username</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="field">
+                <span class="icon"><i class='bx bxs-envelope'></i></span>
+                <input type="email" id="facsignup-email" autocomplete="off" required oninput="debouncedFillQuartersfacsu()">
+                <label>Email</label>
+            </div>
+            <div class="field">
+                <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                <input type="password" id="facsignup-password" autocomplete="off" required oninput="debouncedFillQuartersfacsu()">
+                <label>Password</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="field">
+                <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                <input type="password" id="facsignup-confirm-password" autocomplete="off" required oninput="debouncedFillQuartersfacsu()">
+                <label>Confirm Password</label>
+            </div>
+
+            <div class="create-account">
+                <p>Already have an account? 
+                    <a href="#" class="faclogin-link">Sign In</a>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+       
+        <button type="button" id="facsignup-btn">Sign Up</button>
+    </form>
+    <!-- Add this SVG to your sign-up form -->
+    <svg id="circleSVGfacsu" class="myCircle" height="100" width="100">
+        <circle cx="50" cy="50" r="1" stroke="#000" stroke-width="3" fill="#112" />
+        <path id="circlefacsu" fill="none" stroke="black" stroke-width="3" />
+    </svg>
+</div>
+<!------------------------------------faccon div------------------------------------->
+</div>
+
+<!----------------------------------------------------------------------->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <script src="login.js"></script> 
+</body>
+</html>

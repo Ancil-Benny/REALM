@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('/fonts/MyCustomFont.ttf') format('truetype');
+}
+body {
+    font-family: 'MyCustomFont', fallback;
+}

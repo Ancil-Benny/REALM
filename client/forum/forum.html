@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+    <link rel="stylesheet" href="forum.css">
+    <link rel="stylesheet" href="announcements.css">
+</head>
+<body>
+    <div class="sidebar">
+        <i class='bx bx-home' data-label="Home"></i>
+        <i class='bx bx-user' id="shfor" data-label="Discussion"></i>
+        <i class='bx bx-bell' id="shann" data-label="Announcement"></i>
+        <i class='bx bx-message'id="p2p" data-label="Messages"></i>
+    </div>
+    </div>
+    <div class="forum">
+    <div class="navbar" id="navbar">
+        <div class="navflex" style="display: flex;">
+        <h1 class="navtitle" style="font-size:24px;font-weight: 700;margin-left: 5%;">Discussion Forum</h1>
+        <h2 id="topic-display" ></h2>
+        </div>
+    </div>
+    <div class="main" id="main">
+      
+    </div>
+    <div class="right">
+        <h3 class="topicstitle">Topics</h3>
+        <button id="add-topic">+</button>
+        <div class="topicrow">
+        <input type="text" id="topic-input" style="display: none;"autocomplete="off">
+        <button id="add-button" style="display: none;">Add</button>
+        </div>
+    
+    </div>
+    <div class="message-input">
+        <input type="text" id="message" placeholder="Your message">
+        <button id="send">Send</button>
+    </div>
+</div>
+
+<div class="announcements"style="display: none;">
+    <h1>this is announcements</h1>
+    <div class="ancon"></div>
+    <button id="fab" class="bx bx-plus"></button>
+
+
+<div id="chatInputContainer" class="chat-input-container">
+  <input id="chatInput" type="text" placeholder="Your announcement...">
+  <button id="sendButton" class="material-icons">ADD</button>
+</div>
+    </div>
+    <script>    
+    var showanncon=document.querySelector('.announcements');
+    var showforumcon=document.querySelector('.forum');
+var showann=document.getElementById('shann');
+var showfor=document.getElementById('shfor');
+showann.addEventListener('click',function(){
+    showanncon.style.display="block";
+    showforumcon.style.display="none";
+})
+showfor.addEventListener('click',function(){
+    showanncon.style.display="none";
+    showforumcon.style.display="block";
+})
+document.getElementById('p2p').addEventListener('click',function(){
+    window.location.href="p2p.html";
+})
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
+    <script src="forum.js"></script>
+    <script src="announcements.js"></script>
+</body>
+</html>

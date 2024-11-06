@@ -1,0 +1,1245 @@
+[{
+  "_id": {
+    "$oid": "66123ba51e641dd31c45d8c1"
+  },
+  "name": "phone",
+  "icon": "smartphone",
+  "questions": [
+    "What is the brand of the phone?",
+    "What is the color of the phone?"
+  ],
+  "verificationQuest": [
+    "What is the wallpaper set??"
+  ],
+  "category": "electronics"
+},
+{
+  "_id": {
+    "$oid": "66123d421e641dd31c45d8c3"
+  },
+  "name": "laptop",
+  "icon": "laptop_mac",
+  "questions": [
+    "Which brand is the laptop?",
+    "Which model is the laptop?",
+    "What is the colour of the laptop?"
+  ],
+  "verificationQuest": [
+    "What is the wallpaper in the laptop?"
+  ],
+  "category": "electronics"
+},
+{
+  "_id": {
+    "$oid": "66123df31e641dd31c45d8c5"
+  },
+  "name": "tablet",
+  "icon": "tablet",
+  "questions": [
+    "What is the brand of the tablet?",
+    "What is the model of the tablet?",
+    "What is the colour of the tablet?"
+  ],
+  "verificationQuest": [
+    "What is the wallpaper set in the tablet?"
+  ],
+  "category": "electronics"
+},
+{
+  "_id": {
+    "$oid": "66123f2f1e641dd31c45d8c7"
+  },
+  "name": "smartwatch",
+  "icon": "watch_wake",
+  "questions": [
+    "What is the brand of the smartwatch?",
+    "What is the dial type(round,square)?",
+    "What is the material of the strap(leather,silicon, etc)?"
+  ],
+  "verificationQuest": [
+    "What is the wallpaper set in the watch?"
+  ],
+  "category": "electronics"
+},
+{
+  "_id": {
+    "$oid": "661240081e641dd31c45d8c9"
+  },
+  "name": "charger",
+  "icon": "power",
+  "questions": [
+    "What is the brand of the charger?",
+    "What is the colour of the charger?",
+    "What is the connection type(USB-C,lightning, etc)?"
+  ],
+  "verificationQuest": [
+    "what is the power output of charger?"
+  ],
+  "category": "electronics"
+},
+{
+  "_id": {
+    "$oid": "661240901e641dd31c45d8cb"
+  },
+  "name": "Power bank",
+  "icon": "battery_5_bar",
+  "questions": [
+    "What is the colour of the power bank?",
+    "What is the brand of the power bank",
+    "How many ports does it have?"
+  ],
+  "verificationQuest": [
+    "What is the capacity(mAh)of the power bank?"
+  ],
+  "category": "electronics"
+},
+{
+  "_id": {
+    "$oid": "661241ae1e641dd31c45d8cd"
+  },
+  "name": "Camera",
+  "icon": "home",
+  "questions": [
+    "What is the type of the camera(DSLR,film camera, etc)?",
+    "What is the brand of the camera?",
+    "What is the colour of the camera?"
+  ],
+  "verificationQuest": [
+    "What is the model of the camera?"
+  
+  ],
+  "category": "electronics"
+},
+{
+  "_id": {
+    "$oid": "661242571e641dd31c45d8cf"
+  },
+  "name": "Bluetooth speaker",
+  "icon": "campaign",
+  "questions": [
+    "What is the colour of the speaker?",
+    "What is the brand of the speaker?"
+  ],
+  "verificationQuest": [
+    "What is the model of the speaker?"
+  ],
+  "category": "electronics"
+},
+{
+  "_id": {
+    "$oid": "661266651e641dd31c45d8d2"
+  },
+  "name": "External hard drive",
+  "icon": "hard_drive",
+  "questions": [
+    "What is the brand of the hard drive?",
+    "What is the colour of the hard drive?",
+     "What is the model of the hard drive?"
+  ],
+  "verificationQuest": [
+    "What is the capacity of the hard drive?"
+   
+  ],
+  "category": "electronics"
+},
+{
+  "_id": {
+    "$oid": "661266ed1e641dd31c45d8d4"
+  },
+  "name": "Earbuds",
+  "icon": "erbuds",
+  "questions": [
+    "What is the colour of the earbuds?",
+    "What is the brand of the earbuds?",
+    "Does the earbuds have its case included?"
+  ],
+  "verificationQuest": [
+    "What is the model of the earbuds?"
+    
+  ],
+  "category": "electronics"
+},
+{
+  "_id": {
+    "$oid": "661267c41e641dd31c45d8d6"
+  },
+  "name": "Gaming console",
+  "icon": "sports_esports",
+  "questions": [
+    "What is the type of the console(playstation,Xbox, etc)?",
+    "What is the colour of the console?",
+    "Any accessories with the console?"
+  ],
+  "verificationQuest": [
+    "What is the model of the console?"
+  ],
+  "category": "electronics"
+},
+{
+  "_id": {
+    "$oid": "661268b31e641dd31c45d8d8"
+  },
+  "name": "Calculator",
+  "icon": "calculate",
+  "questions": [
+    "What is the brand of the calculator?",
+    "What is the colour of the calculator?",
+    "What is the type of the calculator(normal,scientific, etc)?"
+  ],
+  "verificationQuest": [
+    "What is the specific model of the calculator?"
+  ],
+  "category": "electronics"
+},
+{
+  "_id": {
+    "$oid": "6612694c1e641dd31c45d8da"
+  },
+  "name": "Pendrive",
+  "icon": "storage",
+  "questions": [
+    "What is the brand of the pendrive?",
+    "What is the colour of the pendrive?",
+    "What is the shape of the pendrive?"
+  ],
+  "verificationQuest": [
+    "What is the capacity of the pendrive(in GB or TB)?"
+  ],
+  "category": "electronics"
+},
+{
+  "_id": {
+    "$oid": "66126a071e641dd31c45d8dc"
+  },
+  "name": "Mouse",
+  "icon": "mouse",
+  "questions": [
+    "What is the connectivity type of the mouse(wired,wireless)?",
+    "What is the colour of the mouse?",
+    "What is the brand of the mouse?"
+  ],
+  "verificationQuest": [
+    "What is the model of the mouse?"
+  ],
+  "category": "electronics"
+},
+{
+  "_id": {
+    "$oid": "66126a941e641dd31c45d8de"
+  },
+  "name": "Portable printer",
+  "icon": "print",
+  "questions": [
+    "What is the brand of the printer?",
+    "What is the colour of the printer?",
+    "Does the printer come with any additional accessories?"
+  ],
+  "verificationQuest": [
+
+    "What is the model of the printer?"
+  ],
+  "category": "electronics"
+},
+{
+  "_id": {
+    "$oid": "66126bb51e641dd31c45d8e0"
+  },
+  "name": "Headphones",
+  "icon": "headphones",
+  "questions": [
+    "What is the brand of the headphone?",
+    "What is the colour of the headphone?",
+    "What is the type of the headphone(overhead,neckband, etc)",
+        "Any wear and tear or faults in the hearphone?"
+  ],
+  "verificationQuest": [
+    "What is the model of the headphone?"
+  ],
+  "category": "electronics"
+},
+{
+  "_id": {
+    "$oid": "66126f251e641dd31c45d8e2"
+  },
+  "name": "Wallet",
+  "icon": "wallet",
+  "questions": [
+    "What is the type of the wallet(bifold,trifold, etc)?",
+    "What is the colour of the wallet?",
+    "What is the material of the wallet?",
+    "Any visible wear and tear in the wallet?"
+  ],
+  "verificationQuest": [
+  "specify the amount of cash in the wallet with the denominations (if any)?"
+  ],
+  "category": "accessories"
+},
+{
+  "_id": {
+    "$oid": "6612701a1e641dd31c45d8e4"
+  },
+  "name": "Sunglasses",
+  "icon": "eyeglasses",
+  "questions": [
+    "What is the colour of the frame?",
+    "What is the shape of the lens?",
+    "What is the tint of the lenses?"
+  ],
+  "verificationQuest": [
+    "What is the brand of the sunglass?"
+  
+  ],
+  "category": "accessories"
+},
+{
+  "_id": {
+    "$oid": "661273561e641dd31c45d8e6"
+  },
+  "name": "Ring",
+  "icon": "circle",
+  "questions": [
+   "what is the average size of the ring?",
+    "What is the colour of the ring?",
+    "What is the material of the ring?"],
+  "verificationQuest": [
+    "Describe the unique identifications in the ring(stones,markings, etc)?"
+  ],
+  "category": "accessories"
+},
+{
+  "_id": {
+    "$oid": "66127cf11e641dd31c45d8e8"
+  },
+  "name": "Neckwear",
+  "icon": "filter_vintage",
+  "questions": [
+    "What is the type of neckwear(necklace,chain, etc)?",
+    "what is the  color of the neckwear?",
+    "What is the material of the neckwear?"
+  ],
+  "verificationQuest": [
+   "Describe unique pattern of the neckwear?"
+  ],
+  "category": "accessories"
+},
+{
+  "_id": {
+    "$oid": "66127dfb1e641dd31c45d8ea"
+  },
+  "name": "Belt",
+  "icon": "commit",
+  "questions": [
+    "What is the colour of the belt?",
+    "What is the material of the belt?",
+    "What is the material of the buckle?"
+  ],
+  "verificationQuest": [
+    "Describe the visible logos and symbols?"
+  ],
+  "category": "accessories"
+},
+{
+  "_id": {
+    "$oid": "66127ee01e641dd31c45d8ec"
+  },
+  "name": "shopping_bag",
+  "icon": "handbag",
+  "questions": [
+    "What is the approximate size of the handbag?",
+    "What is the colour of the handbag?",
+    "Describe any logos in the handbag?"
+  ],
+  "verificationQuest": [
+    "What does the bag contain (if any)?"
+  ],
+  "category": "accessories"
+},
+{
+  "_id": {
+    "$oid": "661280fd1e641dd31c45d8ee"
+  },
+  "name": "Umbrella",
+  "icon": "beach_access",
+  "questions": [
+    "What is the brand of the umbrella?",
+    "What is the colour of the umbrella?",
+    "Describe any visible damage and features?"
+  ],
+  "verificationQuest": [
+    "What is the colour and patterns of the handle?"
+  ],
+  "category": "accessories"
+},
+{
+  "_id": {
+    "$oid": "6612cdad1e641dd31c45d8f6"
+  },
+  "name": "Keychain",
+  "icon": "vpn_key",
+  "questions": [
+    "What is the shape of the keychain?",
+    "What is the material of the keychain",
+    "What is the colour of the keychain?"
+  ],
+  "verificationQuest": [
+    "Describe the attached keys and charms?"
+  ],
+  "category": "accessories"
+},
+{
+  "_id": {
+    "$oid": "6612ce301e641dd31c45d8f8"
+  },
+  "name": "Key",
+  "icon": "key",
+  "questions": [
+    "How many keys are there in the bunch?",
+    "What is the colour of the key?",
+    "Does the key come with a keychain?"
+  ],
+  "verificationQuest": [
+"Describe a unique marking in the key?"
+  ],
+  "category": "accessories"
+},
+{
+  "_id": {
+    "$oid": "6612cef01e641dd31c45d8fa"
+  },
+  "name": "Brooch/Pin",
+  "icon": "keep",
+  "questions": [
+    "What is the shape of the pin?",
+    "What is the material used?"
+  ],
+  "verificationQuest": [
+    "Describe the specific design of the pin?"
+  ],
+  "category": "accessories"
+},
+{
+  "_id": {
+    "$oid": "6612d1401e641dd31c45d8fc"
+  },
+  "name": "Hair accessories",
+  "icon": "texture",
+  "questions": [
+    "What is the type of hair accessory(pin, clip, hairband, etc)?",
+    "What is the material used?",
+    "What is the shape of the accessory?"
+  ],
+  "verificationQuest": [
+    "Describe any decorative elements?"
+  ],
+  "category": "accessories"
+},
+{
+  "_id": {
+    "$oid": "6612d42a1e641dd31c45d8fe"
+  },
+  "name": "Glasses case",
+  "icon": "inventory_2",
+  "questions": [
+    "What is the shape of the box?",
+    "What is the colour of the box?",
+    "What is the material of the box?"
+  ],
+  "verificationQuest": [
+    "Describe what's inside the box?"
+  ],
+  "category": "accessories"
+},
+{
+  "_id": {
+    "$oid": "6612d6171e641dd31c45d900"
+  },
+  "name": "Blacelet",
+  "icon": "radio_button_unchecked",
+  "questions": [
+    "What is the type of bracelet(bangle,chain, leather, etc)?",
+    "What is the colour of the bracelet?"
+  ],
+  "verificationQuest": [
+    "Describe any charms or pendants?"
+  ],
+  "category": "accessories"
+},
+{
+  "_id": {
+    "$oid": "6612d94f1e641dd31c45d902"
+  },
+  "name": "Watch",
+  "icon": "watch",
+  "questions": [
+    "What is material of the strap?",
+    "What is the colour of the strap?",
+    "What is the shape of the dial?",
+    "What is the brand of the watch?"
+  ],
+  "verificationQuest": [
+    "What is the model of the watch?"
+  ],
+  "category": "accessories"
+},
+{
+  "_id": {
+    "$oid": "6630a6ab3936f3e8d6877b16"
+  },
+  "name": "Novel",
+  "icon": "import_contacts",
+  "questions": [
+    "What is the title of the novel?",
+    "Who is the author of the novel?"
+  ],
+  "verificationQuest": [
+    "Desribe the bookmark put in the novel(if any)?"
+  ],
+  "category": "books"
+},
+{
+  "_id": {
+    "$oid": "6630aa103936f3e8d6877b18"
+  },
+  "name": "textbook",
+  "icon": "home",
+  "questions": [
+    "What is the subject of the textbook?",
+    "Who is the author of the textbook?"
+  ],
+  "verificationQuest": [
+    "Is there a name of the owner in the textbook. Specify if there is one?"
+  ],
+  "category": "books"
+},
+{
+  "_id": {
+    "$oid": "6630ab883936f3e8d6877b1a"
+  },
+  "name": "magazines",
+  "icon": "import_contacts",
+  "questions": [
+    "What is the name of the magazine?",
+    "What is name of the publisher?"
+  ],
+  "verificationQuest": [
+    "Specify any feature in the magazine?"
+  ],
+  "category": "books"
+},
+{
+  "_id": {
+    "$oid": "6630ac563936f3e8d6877b1c"
+  },
+  "name": "Notebook",
+  "icon": "imported_contacts",
+  "questions": [
+    "What is the name of the owner?",
+    "What is the brand of the notebook?",
+    "How many pages are there in the notebook?"
+  ],
+  "verificationQuest": [
+    "Describe the cover page of the notebook "
+  ],
+  "category": "books"
+},
+{
+  "_id": {
+    "$oid": "6630ada83936f3e8d6877b1e"
+  },
+  "name": "Dictionary",
+  "icon": "imported_contacts",
+  "questions": [
+    "What is the publishing company of the dictionary?",
+    "what type of dictionery is it?"
+  ],
+  "verificationQuest": [
+    "What is the color the cover in the dictionary?"
+  ],
+  "category": "books"
+},
+{
+  "_id": {
+    "$oid": "6630af8b3936f3e8d6877b20"
+  },
+  "name": "Badminton racket",
+  "icon": "sports_tennis",
+  "questions": [
+    "What is the brand of the racket?",
+    "What is the grip size of the racket?",
+    "What is the model of the racket?"
+  ],
+  "verificationQuest": [
+    "What is the colour of the grip?"
+  ],
+  "category": "sports accessories"
+},
+{
+  "_id": {
+    "$oid": "6630b0593936f3e8d6877b22"
+  },
+  "name": "Tennis ball",
+  "icon": "sports_tennis",
+  "questions": [
+    "What is the colour of the ball?"
+   
+  ],
+  "verificationQuest": [
+    "What is the brand of the ball?"
+  ],
+  "category": "sports accessories"
+},
+{
+  "_id": {
+    "$oid": "6630b1273936f3e8d6877b24"
+  },
+  "name": "Cricket bat",
+  "icon": "sports_cricket",
+  "questions": [
+    "What is the brand of the bat?",
+    "What is the size of the bat?",
+    "What is the colour of the grip?",
+     "Is there any cracks or marks in the bat?"
+  ],
+  "verificationQuest": [
+    "Describe stickers in the bat?"
+   
+  ],
+  "category": "sports accessories"
+},
+{
+  "_id": {
+    "$oid": "6630b2353936f3e8d6877b26"
+  },
+  "name": "Cricket ball",
+  "icon": "sports_cricket",
+  "questions": [
+    "What is type of ball?(rubber,stitch, etc)?",
+    "What is the colour of the ball?"
+  ],
+  "verificationQuest": [
+    "What is the brand of the ball?"
+  ],
+  "category": "sports accessories"
+},
+{
+  "_id": {
+    "$oid": "6630b2dd3936f3e8d6877b28"
+  },
+  "name": "Football",
+  "icon": "sports_soccer",
+  "questions": [
+    "What is the size of the ball?",
+    "What is the brand of the ball?"
+  ],
+  "verificationQuest": [
+    "What is the model of the football?"
+  ],
+  "category": "sports accessories"
+},
+{
+  "_id": {
+    "$oid": "6630b3ba3936f3e8d6877b2a"
+  },
+  "name": "Basketball",
+  "icon": "sports_bassketball",
+  "questions": [
+    "What is the size of the ball?",
+    "What is the brand of the ball?"
+  
+  ],
+  "verificationQuest": [
+     "What is the model of the ball?"
+  ],
+  "category": "sports accessories"
+},
+{
+  "_id": {
+    "$oid": "6630b3e23936f3e8d6877b2c"
+  },
+  "name": "Volleyball",
+  "icon": "sports_volleytball",
+  "questions": [
+    "What is the size of the ball?",
+    "What is the colour of the ball?"
+  ],
+  "verificationQuest": [
+    "What is the brand of the ball?"
+  ],
+  "category": "sports accessories"
+},
+{
+  "_id": {
+    "$oid": "666beec293cdd5d92a3bc58a"
+  },
+  "name": "pen",
+  "icon": "edit",
+  "questions": [
+    "What is the colour of the body?",
+    "What is the colour of the ink?",
+    "What is the brand of the Pen?",
+    "What type is the pen(ballpoint, gel, fountain)?"
+  ],
+  "verificationQuest": [
+    "What is the model of the pen?"
+  ],
+  "category": "stationery"
+},
+{
+  "_id": {
+    "$oid": "666bf1fd93cdd5d92a3bc58c"
+  },
+  "name": "pencil",
+  "icon": "draw",
+  "questions": [
+    "What type of pencil?(wooden, mechanical)",
+    "What is the colour of the pencil?"
+  ],
+  "verificationQuest": [
+    "What is the brand of the pencil?"
+  ],
+  "category": "stationery"
+},
+{
+  "_id": {
+    "$oid": "666bf63b93cdd5d92a3bc58e"
+  },
+  "name": "Highlighter",
+  "icon": "border_color",
+  "questions": [
+    "What is the colour of the body?",
+    "What is the colour of the ink?",
+    "What is the brand of the highlighter"
+  ],
+  "verificationQuest": [
+    "What is the model of the highlighter?"
+   
+  ],
+  "category": "stationary"
+},
+{
+  "_id": {
+    "$oid": "666c4c7e93cdd5d92a3bc590"
+  },
+  "name": "Eraser",
+  "icon": "ink_eraser",
+  "questions": [
+    "What is the colour of the eraser?",
+    "Does the eraser have a cover?"
+  ],
+  "verificationQuest": [
+    "Describe any markings left on the eraser?"
+  ],
+  "category": "stationery"
+},
+{
+  "_id": {
+    "$oid": "666c4d9093cdd5d92a3bc592"
+  },
+  "name": "ruler",
+  "icon": "straighten",
+  "questions": [
+    "What is the material?",
+    "What is the length of the ruler?",
+    "What is the brand of the ruler?"
+  ],
+  "verificationQuest": [
+    "Describe any visible markings?"
+  ],
+  "category": "stationery"
+},
+{
+  "_id": {
+    "$oid": "666c5a5993cdd5d92a3bc594"
+  },
+  "name": "Stapler",
+  "icon": "loyalty",
+  "questions": [
+    "What is the colour of the stapler?",
+    "What is the size of the stapler?"
+  ],
+  "verificationQuest": [
+    "Describe  any brand markings and features?"
+  ],
+  "category": "stationery"
+},
+{
+  "_id": {
+    "$oid": "666c5af593cdd5d92a3bc596"
+  },
+  "name": "Box of paper clip",
+  "icon": "link",
+  "questions": [
+     "Describe the box color?",
+    "What is the brand of the paper clips?"],
+  "verificationQuest": [
+   
+    "What is the colour of the paper clips?"
+  ],
+  "category": "stationery"
+},
+{
+  "_id": {
+    "$oid": "666c5b9293cdd5d92a3bc598"
+  },
+  "name": "Marker",
+  "icon": "ink_marker",
+  "questions": [
+    "What colour is the body of the marker?",
+    "What is the colour of the ink?"
+  ],
+  "verificationQuest": [
+    "Describe any markings and branding in the marker?"
+  ],
+  "category": "stationery"
+},
+{
+  "_id": {
+    "$oid": "666c5c5593cdd5d92a3bc59a"
+  },
+  "name": "ID card",
+  "icon": "team_dashboard",
+  "questions": [
+    "What is the name on the ID card?",
+    "Describe the address or pincode?"
+  ],
+  "verificationQuest": [
+    "Specify date of birth?"
+  ],
+  "category": "Personal items"
+},
+{
+  "_id": {
+    "$oid": "666c5d5693cdd5d92a3bc59c"
+  },
+  "name": "Passport",
+  "icon": "data_thresholding",
+  "questions": [
+    "What is the name in the passport?",
+    "What is the colour of the passport?",
+    "What is the country of the passport?",
+    "What are the visas in the passport?"
+  ],
+  "verificationQuest": [
+    "Describe the specific stamps in the passport?"
+  ],
+  "category": "Personal items"
+},
+{
+  "_id": {
+    "$oid": "666c5e1793cdd5d92a3bc59e"
+  },
+  "name": "Drivers license",
+  "icon": "toolbar",
+  "questions": [
+    "What is the name on the license?",
+    "What is the date of issue of the license?",
+    "What is the address on the license?"
+  ],
+  "verificationQuest": [
+    "Specify date of birth?"
+  ],
+  "category": "Personal items"
+},
+{
+  "_id": {
+    "$oid": "666c60e093cdd5d92a3bc5a0"
+  },
+  "name": "Credit/Debit card",
+  "icon": "credit_card",
+  "questions": [
+    "What is the name on the card?",
+    "Which bank issued the card?",
+    "What is the colour of the card?"
+  ],
+  "verificationQuest": [
+    "What are the last 4 digits of the card?"
+  ],
+  "category": "Personal items"
+},
+{
+  "_id": {
+    "$oid": "666c61ac93cdd5d92a3bc5a2"
+  },
+  "name": "Library card",
+  "icon": "team_dashboard",
+  "questions": [
+    "What is the name on the card?",
+    "What is the academic period of the student?"
+  ],
+  "verificationQuest": [
+    "Describe the deails of the books mentioned in the card?"
+  ],
+  "category": "Persnal items"
+},
+{
+  "_id": {
+    "$oid": "666c62e293cdd5d92a3bc5a5"
+  },
+  "name": "Bus pass",
+  "icon": "universal_currency",
+  "questions": [
+    "What is the name of the owner?",
+    "What is the academic era of the student?"
+  ],
+  "verificationQuest": [
+    "Describe the destination location in the card?"
+  ],
+  "category": "Personal items"
+},
+{
+  "_id": {
+    "$oid": "666c63f993cdd5d92a3bc5a7"
+  },
+  "name": "Event ticket",
+  "icon": "conformation_number",
+  "questions": [
+    "Describe the location of the event?",
+    "Describe the date and time of the event?",
+    "Describe the amount for the ticket?"
+  ],
+  "verificationQuest": [
+    "Describe the seat specification in the ticket?"
+  ],
+  "category": "Personal items"
+},
+{
+  "_id": {
+    "$oid": "666d84d3f8039bdfac8474a7"
+  },
+  "name": "Sneakers",
+  "icon": "footprint",
+  "questions": [
+    "What is colour of the sneaker?",
+    "What is the brand of the sneaker?"
+  ],
+  "verificationQuest": [
+    "What is the size of the sneaker?"
+  ],
+  "category": "Footwear"
+},
+{
+  "_id": {
+    "$oid": "666d85fef8039bdfac8474a9"
+  },
+  "name": "Sandals",
+  "icon": "footprint",
+  "questions": [
+    "What is the colour of the sandal?",
+    "What is the style of the sandal?"
+  ],
+  "verificationQuest": [
+    "What is the size of the sandal?"
+  ],
+  "category": "footwear"
+},
+{
+  "_id": {
+    "$oid": "666d86c1f8039bdfac8474ab"
+  },
+  "name": "Boots",
+  "icon": "steps",
+  "questions": [
+    "What is the type of boots(ankle boots,knee high?",
+    "What is the colour of the boots?",
+    "What is the brand of the boots?"
+  ],
+  "verificationQuest": [
+    "What is the size of the boots?"
+  ],
+  "category": "footwear"
+},
+{
+  "_id": {
+    "$oid": "666d8b07f8039bdfac8474ad"
+  },
+  "name": "Slippers",
+  "icon": "footprint",
+  "questions": [
+    "Is it indoor slippers or outdoor slippers?",
+    "What is the colour of the slippers?",
+    "What is the brand of the Slippers?"
+  ],
+  "verificationQuest": [
+   "What is the size of the Slippers?"
+  ],
+  "category": "footwear"
+},
+{
+  "_id": {
+    "$oid": "666d8d20f8039bdfac8474af"
+  },
+  "name": "Loafers",
+  "icon": "steps",
+  "questions": [
+    "What is the colour of the loafers?",
+    "What is the brand of the loafers?"
+  ],
+  "verificationQuest": [
+    "what is the size of the loafers?"
+  ],
+  "category": "footwear"
+},
+{
+  "_id": {
+    "$oid": "666d8e00f8039bdfac8474b1"
+  },
+  "name": "Shoes",
+  "icon": "steps",
+  "questions": [
+    "What is the colour of the shoes?",
+    "What is the brand of the shoes?",
+     "Describe any visible markings or wear?"
+  ],
+  "verificationQuest": [
+    "What is the size of the shoes?"
+  ],
+  "category": "footwear"
+},
+{
+  "_id": {
+    "$oid": "666d99bbf8039bdfac8474b3"
+  },
+  "name": "Jacket",
+  "icon": "laundry",
+  "questions": [
+    "What is the colour of the jacket?",
+    "What is the size of the jacket?"
+  ],
+  "verificationQuest": [
+    "Describe any visible markings or tear?"
+  ],
+  "category": "Clothing"
+},
+{
+  "_id": {
+    "$oid": "666d9b9ef8039bdfac8474b5"
+  },
+  "name": "Scarf",
+  "icon": "styler",
+  "questions": [
+    "What is the colour of the scarf?",
+    "Describe the patterns in the scarf?"
+  ],
+  "verificationQuest": [
+    "Describe the type of embroidery and markings in the scarf?"
+  ],
+  "category": "Clothing"
+},
+{
+  "_id": {
+    "$oid": "666d9ce0f8039bdfac8474b7"
+  },
+  "name": "Hat/Cap",
+  "icon": "school",
+  "questions": [
+    "What is the style of the cap(baseball,beanie)?",
+    "What is the colour of the cap?"
+  ],
+  "verificationQuest": [
+    "Describe the brandings and markings in the cap?"
+  ],
+  "category": "Clothing"
+},
+{
+  "_id": {
+    "$oid": "666d9d72f8039bdfac8474b9"
+  },
+  "name": "Sweater",
+  "icon": "styler",
+  "questions": [
+    "What is the colour of the sweater?",
+    "What is the fabric of the sweater?"
+  ],
+  "verificationQuest": [
+    "Describe any engravings or visible wear?",
+    "Do you have a mortgage?"
+  ],
+  "category": "Clothing"
+},
+{
+  "_id": {
+    "$oid": "666d9df8f8039bdfac8474bb"
+  },
+  "name": "Pants",
+  "icon": "styler",
+  "questions": [
+    "What is the fabric of the pants?",
+    "What is the colour of the pants?",
+    "What is the brand of the pants?"
+  ],
+  "verificationQuest": [
+    "What is the size of the pants?"
+  ],
+  "category": "Clothing"
+},
+{
+  "_id": {
+    "$oid": "666d9ebbf8039bdfac8474bd"
+  },
+  "name": "Shirt",
+  "icon": "styler",
+  "questions": [
+    "What is the colour of the shirt?",
+    "What is the fabric of the shirt?",
+    "What is the size of the shirt?"
+  ],
+  "verificationQuest": [
+    "What is the brand of the shirt?"
+  ],
+  "category": "Clothing"
+},
+{
+  "_id": {
+    "$oid": "666d9ee6f8039bdfac8474bf"
+  },
+  "name": "Blouse",
+  "icon": "Blouse",
+  "questions": [
+    "What is the colour of the blouse?",
+    "What is the fabric of the blouse?",
+    "What is the size of the blouse?"
+  ],
+  "verificationQuest": [
+    "What is the brand of the blouse?"
+  ],
+  "category": "Clothing"
+},
+{
+  "_id": {
+    "$oid": "666d9f14f8039bdfac8474c1"
+  },
+  "name": "Skirt",
+  "icon": "styler",
+  "questions": [
+    "What is the colour of the skirt?",
+    "What is the fabric of the skirt?",
+    "What is the size of the skirt?"
+  ],
+  "verificationQuest": [
+    "What is the brand of the skirt?"
+  ],
+  "category": "Clothing"
+},
+{
+  "_id": {
+    "$oid": "666d9faff8039bdfac8474c3"
+  },
+  "name": "Socks",
+  "icon": "styler",
+  "questions": [
+    "What is the colour of the socks?",
+    "What is the size of socks?",
+    "What is the size od the socks"
+  ],
+  "verificationQuest": [
+    "Describe any visible wear and tear in the socks?"
+  ],
+  "category": "Clothing"
+},
+{
+  "_id": {
+    "$oid": "666da06ff8039bdfac8474c5"
+  },
+  "name": "Handkerchief",
+  "icon": "styler",
+  "questions": [
+    "What is the colour of the handkerchief?",
+    "What is the fabric of the handkerchief?",
+    "What is the size of the handkerchief?"
+  ],
+  "verificationQuest": [
+    "Describe the embroidery and markings?"
+  ],
+  "category": "Clothing"
+},
+{
+  "_id": {
+    "$oid": "666c8d890541523ff3aa9a9f"
+  },
+  "name": "lip balm",
+  "icon": "ink_marker",
+  "questions": [
+    "What brand is the lip balm?",
+    "Any specific flavour or tint?"
+  ],
+  "verificationQuest": [
+    "Describe any label on the lip balm?"
+  ],
+  "category": "beauty and personal care"
+},
+{
+  "_id": {
+    "$oid": "666c91120541523ff3aa9aa6"
+  },
+  "name": "hair brush",
+  "icon": "Self Care",
+  "questions": [
+    "Describe the hairbrush color?",
+    "Any specific brand or features?"
+  ],
+  "verificationQuest": [
+  "Any visible wear or tear?"
+  ],
+  "category": "beauty and personal care"
+},
+{
+  "_id": {
+    "$oid": "666c935f0541523ff3aa9aa9"
+  },
+  "name": "perfume bottle",
+  "icon": "sanitizer",
+  "questions": [
+    "Describe the perfume bottle(brand,scent)?",
+    "Any visible level of fragrance remaining?"
+  ],
+  "verificationQuest": [
+    "What is the price of the perfume bottle?"
+  ],
+  "category": "beauty and personal care"
+},
+{
+  "_id": {
+    "$oid": "666da1ff0541523ff3aa9aab"
+  },
+  "name": "hand cream",
+  "icon": "clean_hands",
+  "questions": [
+    "What  brand is the hand cream?",
+  "What scent is the hand cream?"
+  ],
+  "verificationQuest": [
+   "Describe any visible usage or residue?"
+  ],
+  "category": "beauty and personal care"
+},
+{
+  "_id": {
+    "$oid": "666da4190541523ff3aa9aad"
+  },
+  "name": "facemask",
+  "icon": "medical_mask",
+  "questions": [
+    "what type of face mask(sheet mask,clay mask)?",
+    "What  brand is the face mask?"
+  ],
+  "verificationQuest": [
+    "what color is the facemask?"
+  ],
+  "category": "beauty and personal care"
+},
+{
+  "_id": {
+    "$oid": "666da5520541523ff3aa9aaf"
+  },
+  "name": "Eyeliner pencil",
+  "icon": "edit",
+  "questions": [
+    "Describe brand of eyeliner?",
+    "What is the case color of the eyeliner?"
+  ],
+  "verificationQuest": [
+    "Any visible sharpening or usage?"
+  ],
+  "category": "beauty and personal care"
+}
+]

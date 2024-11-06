@@ -1,0 +1,655 @@
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+	cursor: none !important;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+  }
+  
+
+body{
+    font-family: 'Helveticanowdisplay', sans-serif;
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+}
+.icon .bx {
+    color: #f5f5f5;
+    opacity: 0.2;
+    font-size: 14px;
+    margin-right: 10px; 
+}
+	@font-face {
+		font-family: 'orbit';
+		src: url('earthorbiter.ttf') format('truetype'); 
+	}
+	
+	.cursor {
+		position: fixed;
+		top: 0;
+		left: 0;
+		pointer-events: none;
+		z-index: 11000;
+	  }
+	  
+	  .cursor--small {
+		width: 20px;
+		height: 20px;
+		background: #fff;
+		border-radius: 50%;
+	  }
+	/*-------------------------------------------*/
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    flex-direction: row;
+}
+
+.logo {
+    color: #f3b351;
+    font-size: 16px;
+    margin-left: 50px; 
+	
+}
+.logo:hover {
+	color: #fff;
+	
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-right: 300px; 
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+	cursor: none;
+	font-size: 12px;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    text-align: center;
+    flex-grow: 1;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    padding: 0;
+    margin-right: 30px; 
+	padding: 3px 0; /* space for undeline and link*/
+	
+}
+
+.nav-links a:before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    top: 90%;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to right, #fff, #fff) no-repeat;
+    background-size: 100% 100%;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-links a:hover:before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.nav-links a span {
+    display: block;
+    transition: transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.nav-links a:after {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    content: attr(data-hover);
+    display: inline;
+    text-align: center;
+    transition: top 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.nav-links a:hover span {
+   
+    transform: translateY(-100%);
+}
+
+.nav-links a:hover:after {
+    top: 0;
+}
+/*---------*/
+.time-date {
+    color: black;
+	font-size: 14px;
+	font-weight: 400;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 30px;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+	transition: color 0.3s ease-in-out; 
+	z-index: 1;
+}
+
+.time-date:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #f3b351; 
+    transition: top 0.3s ease-in-out;
+	z-index: -1;
+}
+
+.time-date:hover:before {
+    top: 0;
+}
+.time-date:hover {
+    color: black; 
+}
+/*---------------------------------------*/
+.lgtxtcontainer{
+margin-top: 100px;
+margin-left: 50px;
+
+}
+.lgtxt{
+	color: #fff;
+	font-size: 100px;
+	font-weight: 400;
+	margin: 25px;
+
+}
+
+.linebreak{
+	height: 0;
+	border-bottom: 1px solid rgba(255,255,255,0.25);
+
+}
+/* HTML: <div class="loader"></div> */
+.loader {
+    position: absolute;
+    left: 55%;
+    bottom: 35%;
+  width: 90px;
+  aspect-ratio: 1;
+  color: #f3b351;
+  background: conic-gradient(currentColor 0 270deg,#0000 0);
+  border-radius: 50%;
+  animation: l14-0 4s infinite linear;
+}
+.loader::before {
+  content: "";
+  display: block;
+  height: 50%;
+  width: 50%;
+  border-top-left-radius: 100px;
+  background: currentColor;
+  animation: l14 0.5s infinite alternate;
+}
+@keyframes l14-0 {
+    0%,24.99%  {transform: rotate(0deg)}
+    25%,49.99% {transform: rotate(90deg)}
+    50%,74.99% {transform: rotate(180deg)}
+    75%,100%   {transform: rotate(270deg)}
+}
+@keyframes l14 {
+    100%  {transform: translate(-10px,-10px)}
+}
+  .lgtxtp1{
+	margin-top: 50px;
+	  color: #fff;
+	  font-size: 12px;
+	display: inline-block;
+	margin-left: 18%;
+  }
+  .bottomtext{
+    color: #fff;
+    font-size: 14px;
+  display: inline-block;
+  position: relative;
+  left: 10%;
+  top:40px;
+  }
+ /*-------------student login and sign up----------------------*/
+
+ .stdcontainer,.admincontainer, .faccontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: auto; 
+    padding: 20px;
+    box-sizing: border-box; 
+}
+
+.stdcontainer .form-box,.admincontainer .form-box, .faccontainer .form-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.stdcontainer .form-box .input-box, .admincontainer .form-box .input-box, .faccontainer .form-box .input-box{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.stdcontainer .form-box .input-box .field,
+ .admincontainer .form-box .input-box .field,
+  .faccontainer .form-box .input-box .field{
+  
+    position: relative;
+    height: 50px;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    margin-bottom: 10px;
+    margin-right: 2%;
+    cursor: none;
+}
+.stdcontainer .form-box .input-box .field:last-child, 
+.admincontainer .form-box .input-box .field:last-child,
+ .faccontainer .form-box .input-box .field:last-child{
+    margin-right: 0; 
+}
+.stdcontainer .form-box .input-box label,
+.stdcontainer .form-box .input-box input,
+.admcontainer .form-box .input-box label,
+.admcontainer .form-box .input-box input,
+.faccontainer .form-box .input-box label,
+.faccontainer .form-box .input-box input{
+    width: 100%;
+    cursor: none;
+}
+.stdcontainer .form-box h2, .admincontainer .form-box h2, .faccontainer .form-box h2{
+    position: relative;
+    top:20%;
+    left: -30%;
+   display: inline-block;
+    font-size: 17px;
+    color:#fff;
+    font-weight: 400;
+    padding: auto;
+    white-space: nowrap;
+ 
+}
+.admincontainer .form-box.admsu h2, .faccontainer .form-box.facsu h2{
+left:-35%;
+}
+
+.stdcontainer .form-box .input-box, .admincontainer .form-box .input-box, .faccontainer .form-box .input-box{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.stdcontainer .form-box .input-box input, .admincontainer .form-box .input-box input, .faccontainer .form-box .input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding-right: 28px;
+    color: #fff;
+    caret-color: #f3b351;
+}
+
+.stdcontainer .form-box .input-box label, .admincontainer .form-box .input-box label, .faccontainer .form-box .input-box label{
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 17px;
+    font-weight: 400;
+    pointer-events: none;
+    transition: .5s ease;
+}
+
+.stdcontainer .form-box .input-box label::after, 
+.admincontainer .form-box .input-box label::after,
+ .faccontainer .form-box .input-box label::after{
+    content: "*";
+    color: #f3b351; 
+    margin-left: 5px; 
+}
+
+.stdcontainer .form-box .input-box .icon,
+.admincontainer .form-box .input-box .icon, 
+.faccontainer .form-box .input-box .icon{
+    position: absolute;
+    top: 13px;
+    right: 0;
+    font-size: 21px;
+}
+
+.stdcontainer .form-box .input-box input:focus ~ label,
+.stdcontainer .form-box .input-box input:valid ~ label,
+.admincontainer .form-box .input-box input:focus ~ label,
+.admincontainer .form-box .input-box input:valid ~ label,
+.faccontainer .form-box .input-box input:focus ~ label,
+.faccontainer .form-box .input-box input:valid ~ label{
+    top: -5px;
+}
+
+
+.stdcontainer .form-box .input-box input.not-empty ~ label,
+ .admincontainer .form-box .input-box input.not-empty ~ label,
+  .faccontainer .form-box .input-box input.not-empty ~ label{
+    top: -5px;
+}
+
+.stdcontainer .form-box #login-btn, .admincontainer .form-box #admlogin-btn, .faccontainer .form-box #faclogin-btn{
+    color: #000;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease-in-out;
+    z-index: 1;
+    cursor: none;
+}
+
+.stdcontainer .form-box #login-btn:before ,
+ .admincontainer .form-box #admlogin-btn:before,
+  .faccontainer .form-box #faclogin-btn:before{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #f3b351;
+    transition: top 0.3s ease-in-out;
+    z-index: -1;
+}
+
+.stdcontainer .form-box #login-btn:hover:before,
+ .admincontainer .form-box #admlogin-btn:hover:before,
+  .faccontainer .form-box #faclogin-btn:hover:before{
+    top: 0;
+}
+
+.stdcontainer .form-box #login-btn:hover,
+ .admincontainer .form-box #admlogin-btn:hover,
+  .faccontainer .form-box #faclogin-btn:hover{
+    color: #000;
+}
+
+.stdcontainer .form-box .create-account,
+ .admincontainer .form-box .create-account,
+  .faccontainer .form-box .create-account{
+    color: #fff;
+    font-size: 14.5px;
+    text-align: center;
+    margin: 25px;
+}
+
+.stdcontainer .form-box .create-account p a ,
+ .admincontainer .form-box .create-account p a,
+  .faccontainer .form-box .create-account p a{
+    color: #fff;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.stdcontainer .form-box .create-account p a:hover,
+ .admincontainer .form-box .create-account p a:hover,
+  .faccontainer .form-box .create-account p a:hover{
+    text-decoration: underline;
+    color: #f3b351;
+}
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 100px;
+}
+
+.button-container #login-btn, #admlogin-btn, #faclogin-btn {
+    width: 45%; 
+    
+}
+
+.button-container .create-account {
+    width: 45%; 
+   white-space: nowrap;
+}
+
+/*-------------svg circle--------------------------*/
+.myCircle {
+    position: absolute;
+    top: 48rem;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
+#fillText {
+    font-weight: bold;
+}
+
+/*--------stdcon std sign up--------------*/
+.form-box.stdsu, .form-box.admsu, .form-box.facsu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: auto; 
+    padding: 20px;
+    box-sizing: border-box; 
+    margin: 0;
+}
+
+.form-box.stdsu .row, .form-box.admsu .row, .form-box.facsu .row{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.form-box.stdsu .row .field, .form-box.admsu .row .field, .form-box.facsu .row .field{
+    position: relative;
+    height: 50px;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    margin-bottom: 10px;
+    margin-right: 2%;
+    cursor: none;
+}
+
+.form-box.stdsu .row .field:last-child, .form-box.admsu .row .field:last-child, .form-box.facsu .row .field:last-child{
+    margin-right: 0; 
+}
+
+.form-box.stdsu .row label,
+.form-box.stdsu .row input,
+.form-box.admsu .row label,
+.form-box.admsu .row input,
+.form-box.facsu .row label,
+.form-box.facsu .row input{
+    width: 100%;
+    cursor: none;
+}
+
+.form-box.stdsu h2, .form-box.admsu h2, .form-box.facsu h2{
+    position: relative;
+    top:3rem;
+    left: -50%;
+    display: inline-block;
+    font-size: 17px;
+    color:#fff;
+    font-weight: 400;
+    padding: auto;
+    white-space: nowrap;
+}
+
+.form-box.stdsu .row, .form-box.admsu .row, .form-box.facsu .row{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.form-box.stdsu .row input, .form-box.admsu .row input, .form-box.facsu .row input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding-right: 28px;
+    color: #fff;
+    caret-color: #f3b351;
+}
+
+.form-box.stdsu .row label, .form-box.admsu .row label, .form-box.facsu .row label{
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 17px;
+    font-weight: 400;
+    pointer-events: none;
+    transition: .5s ease;
+}
+
+.form-box.stdsu .row label::after, .form-box.admsu .row label::after, .form-box.facsu .row label::after{
+    content: "*";
+    color: #f3b351; 
+    margin-left: 5px; 
+}
+
+.form-box.stdsu .row .icon, .form-box.admsu .row .icon, .form-box.facsu .row .icon{
+    position: absolute;
+    top: 13px;
+    right: 0;
+    font-size: 21px;
+}
+
+.form-box.stdsu .row input:focus ~ label,
+.form-box.stdsu .row input:valid ~ label,
+.form-box.admsu .row input:focus ~ label,
+.form-box.admsu .row input:valid ~ label,
+.form-box.facsu .row input:focus ~ label,
+.form-box.facsu .row input:valid ~ label{
+    top: -5px;
+}
+
+.form-box.stdsu .row input.not-empty ~ label,
+.form-box.admsu .row input.not-empty ~ label,
+.form-box.facsu .row input.not-empty ~ label{
+    top: -5px;
+}
+
+.form-box.stdsu #signup-btn, .form-box.admsu #admsignup-btn, .form-box.facsu #facsignup-btn{
+    color: #000;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #fff;
+    padding: 15px;
+    padding-left: 45px;
+    padding-right: 45px;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease-in-out;
+    z-index: 1;
+    cursor: none;
+    
+}
+
+
+
+.form-box.stdsu #signup-btn:before, .form-box.admsu #admsignup-btn:before, .form-box.facsu #facsignup-btn:before{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #f3b351;
+    transition: top 0.3s ease-in-out;
+    z-index: -1;
+}
+
+.form-box.stdsu #signup-btn:hover:before, .form-box.admsu #admsignup-btn:hover:before, .form-box.facsu #facsignup-btn:hover:before{
+    top: 0;
+}
+
+.form-box.stdsu #signup-btn:hover, .form-box.admsu #admsignup-btn:hover, .form-box.facsu #facsignup-btn:hover{
+    color: #000;
+}
+
+.form-box.stdsu .create-account, .form-box.admsu .create-account, .form-box.facsu .create-account{
+    color: #fff;
+    font-size: 14.5px;
+    text-align: center;
+    margin: 25px;
+}
+
+.form-box.stdsu .create-account p a, .form-box.admsu .create-account p a, .form-box.facsu .create-account p a{
+    color: #fff;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.form-box.stdsu .create-account p a:hover, .form-box.admsu .create-account p a:hover, .form-box.facsu .create-account p a:hover{
+    text-decoration: underline;
+    color: #f3b351;
+}
+.row {
+    display: flex;
+   gap: 40px;
+    justify-content: space-between;
+}
+
+.row .field {
+    width: 60%; /* less than 50% to leave some space between the fields */
+   flex:1;
+}
+
+.row .field:last-child {
+    margin-right: 0;
+}
+
+#signup-image {
+    display: none; 
+   
+}
+
+#signup-image + label {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 10px;
+    background-color: #fff;
+    color: #000;
+    pointer-events: auto;
+  text-align: center;
+  border-radius: 3px;
+}
+
+#signup-image + label:hover {
+    background-color: #f3b351;
+}

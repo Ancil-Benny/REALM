@@ -1,0 +1,1990 @@
+[
+    {
+      "item": "phone",
+      "category": "electronics",
+      "description": "A blue Samsung S22 Ultra with visible scratches on the back",
+      "questions": [
+        {
+          "question": "What is the brand of the phone?",
+          "answer": "Samsung"
+        },
+        {
+          "question": "What is the color of the phone?",
+          "answer": "blue"
+        }
+      ]
+    },
+    {
+      "item": "phone",
+      "category": "electronics",
+      "description": "A black iPhone 12 Pro with a cracked screen",
+      "questions": [
+        {
+          "question": "What is the brand of the phone?",
+          "answer": "iPhone"
+        },
+        {
+          "question": "What is the color of the phone?",
+          "answer": "black"
+        }
+      ]
+    },
+    {
+      "item": "laptop",
+      "category": "electronics",
+      "description": "A silver Dell XPS 13 with a missing key on the keyboard",
+      "questions": [
+        {
+          "question": "Which brand is the laptop?",
+          "answer": "Dell"
+        },
+        {
+          "question": "Which model is the laptop?",
+          "answer": "XPS 13"
+        },
+        {
+          "question": "What is the color of the laptop?",
+          "answer": "silver"
+        }
+      ]
+    },
+    {
+      "item": "laptop",
+      "category": "electronics",
+      "description": "A grey MacBook Air with stickers on the lid",
+      "questions": [
+        {
+          "question": "Which brand is the laptop?",
+          "answer": "Apple"
+        },
+        {
+          "question": "Which model is the laptop?",
+          "answer": "MacBook Air"
+        },
+        {
+          "question": "What is the color of the laptop?",
+          "answer": "grey"
+        }
+      ]
+    },
+    {
+      "item": "tablet",
+      "category": "electronics",
+      "description": "A white iPad Air with a dent on the corner",
+      "questions": [
+        {
+          "question": "What is the brand of the tablet?",
+          "answer": "Apple"
+        },
+        {
+          "question": "What is the model of the tablet?",
+          "answer": "iPad Air"
+        },
+        {
+          "question": "What is the color of the tablet?",
+          "answer": "white"
+        }
+      ]
+    },
+    {
+      "item": "tablet",
+      "category": "electronics",
+      "description": "A black Samsung Galaxy Tab S7 with a broken screen",
+      "questions": [
+        {
+          "question": "What is the brand of the tablet?",
+          "answer": "Samsung"
+        },
+        {
+          "question": "What is the model of the tablet?",
+          "answer": "Galaxy Tab S7"
+        },
+        {
+          "question": "What is the color of the tablet?",
+          "answer": "black"
+        }
+      ]
+    },
+    {
+      "item": "smartwatch",
+      "category": "electronics",
+      "description": "A black Apple Watch with a leather strap",
+      "questions": [
+        {
+          "question": "What is the brand of the smartwatch?",
+          "answer": "Apple"
+        },
+        {
+          "question": "What is the dial type (round, square)?",
+          "answer": "square"
+        },
+        {
+          "question": "What is the material of the strap (leather, silicon, etc)?",
+          "answer": "leather"
+        }
+      ]
+    },
+    {
+      "item": "smartwatch",
+      "category": "electronics",
+      "description": "A silver Fitbit Versa with a silicon strap",
+      "questions": [
+        {
+          "question": "What is the brand of the smartwatch?",
+          "answer": "Fitbit"
+        },
+        {
+          "question": "What is the dial type (round, square)?",
+          "answer": "square"
+        },
+        {
+          "question": "What is the material of the strap (leather, silicon, etc)?",
+          "answer": "silicon"
+        }
+      ]
+    },
+    {
+      "item": "charger",
+      "category": "electronics",
+      "description": "A white Apple charger with a USB-C connection",
+      "questions": [
+        {
+          "question": "What is the brand of the charger?",
+          "answer": "Apple"
+        },
+        {
+          "question": "What is the color of the charger?",
+          "answer": "white"
+        },
+        {
+          "question": "What is the connection type (USB-C, lightning, etc)?",
+          "answer": "USB-C"
+        }
+      ]
+    },
+    {
+      "item": "charger",
+      "category": "electronics",
+      "description": "A black Samsung charger with a micro-USB connection",
+      "questions": [
+        {
+          "question": "What is the brand of the charger?",
+          "answer": "Samsung"
+        },
+        {
+          "question": "What is the color of the charger?",
+          "answer": "black"
+        },
+        {
+          "question": "What is the connection type (USB-C, lightning, etc)?",
+          "answer": "micro-USB"
+        }
+      ]
+    },
+    {
+      "item": "Power bank",
+      "category": "electronics",
+      "description": "A black Anker power bank with three ports",
+      "questions": [
+        {
+          "question": "What is the color of the power bank?",
+          "answer": "black"
+        },
+        {
+          "question": "What is the brand of the power bank?",
+          "answer": "Anker"
+        },
+        {
+          "question": "How many ports does it have?",
+          "answer": "three"
+        }
+      ]
+    },
+    {
+      "item": "Power bank",
+      "category": "electronics",
+      "description": "A white Xiaomi power bank with two ports",
+      "questions": [
+        {
+          "question": "What is the color of the power bank?",
+          "answer": "white"
+        },
+        {
+          "question": "What is the brand of the power bank?",
+          "answer": "Xiaomi"
+        },
+        {
+          "question": "How many ports does it have?",
+          "answer": "two"
+        }
+      ]
+    },
+    {
+      "item": "Camera",
+      "category": "electronics",
+      "description": "A black Canon DSLR with a 50mm lens",
+      "questions": [
+        {
+          "question": "What is the type of the camera (DSLR, film camera, etc)?",
+          "answer": "DSLR"
+        },
+        {
+          "question": "What is the brand of the camera?",
+          "answer": "Canon"
+        },
+        {
+          "question": "What is the color of the camera?",
+          "answer": "black"
+        }
+      ]
+    },
+    {
+      "item": "Camera",
+      "category": "electronics",
+      "description": "A silver Nikon film camera with a 35mm lens",
+      "questions": [
+        {
+          "question": "What is the type of the camera (DSLR, film camera, etc)?",
+          "answer": "film camera"
+        },
+        {
+          "question": "What is the brand of the camera?",
+          "answer": "Nikon"
+        },
+        {
+          "question": "What is the color of the camera?",
+          "answer": "silver"
+        }
+      ]
+    },
+    {
+      "item": "Bluetooth speaker",
+      "category": "electronics",
+      "description": "A red JBL Bluetooth speaker with a cylindrical shape",
+      "questions": [
+        {
+          "question": "What is the color of the speaker?",
+          "answer": "red"
+        },
+        {
+          "question": "What is the brand of the speaker?",
+          "answer": "JBL"
+        }
+      ]
+    },
+    {
+      "item": "Bluetooth speaker",
+      "category": "electronics",
+      "description": "A blue Sony Bluetooth speaker with a rectangular shape",
+      "questions": [
+        {
+          "question": "What is the color of the speaker?",
+          "answer": "blue"
+        },
+        {
+          "question": "What is the brand of the speaker?",
+          "answer": "Sony"
+        }
+      ]
+        },
+        {
+          "item": "External hard drive",
+          "category": "electronics",
+          "description": "A black Seagate external hard drive with 2TB capacity",
+          "questions": [
+            {
+              "question": "What is the brand of the hard drive?",
+              "answer": "Seagate"
+            },
+            {
+              "question": "What is the colour of the hard drive?",
+              "answer": "black"
+            },
+            {
+              "question": "What is the model of the hard drive?",
+              "answer": "Backup Plus"
+            }
+          ]
+        },
+        {
+          "item": "External hard drive",
+          "category": "electronics",
+          "description": "A silver Western Digital external hard drive with 1TB capacity",
+          "questions": [
+            {
+              "question": "What is the brand of the hard drive?",
+              "answer": "Western Digital"
+            },
+            {
+              "question": "What is the colour of the hard drive?",
+              "answer": "silver"
+            },
+            {
+              "question": "What is the model of the hard drive?",
+              "answer": "My Passport"
+            }
+          ]
+        },
+        {
+          "item": "Earbuds",
+          "category": "electronics",
+          "description": "A pair of black Samsung Galaxy Buds with the charging case included",
+          "questions": [
+            {
+              "question": "What is the colour of the earbuds?",
+              "answer": "black"
+            },
+            {
+              "question": "What is the brand of the earbuds?",
+              "answer": "Samsung"
+            },
+            {
+              "question": "Does the earbuds have its case included?",
+              "answer": "yes"
+            }
+          ]
+        },
+        {
+          "item": "Earbuds",
+          "category": "electronics",
+          "description": "A pair of white Apple AirPods with no case included",
+          "questions": [
+            {
+              "question": "What is the colour of the earbuds?",
+              "answer": "white"
+            },
+            {
+              "question": "What is the brand of the earbuds?",
+              "answer": "Apple"
+            },
+            {
+              "question": "Does the earbuds have its case included?",
+              "answer": "no"
+            }
+          ]
+        },
+        {
+          "item": "Gaming console",
+          "category": "electronics",
+          "description": "A black PlayStation 5 with two controllers included",
+          "questions": [
+            {
+              "question": "What is the type of the console (PlayStation, Xbox, etc)?",
+              "answer": "PlayStation"
+            },
+            {
+              "question": "What is the colour of the console?",
+              "answer": "black"
+            },
+            {
+              "question": "Any accessories with the console?",
+              "answer": "two controllers"
+            }
+          ]
+        },
+        {
+          "item": "Gaming console",
+          "category": "electronics",
+          "description": "A white Xbox Series X with a charging dock included",
+          "questions": [
+            {
+              "question": "What is the type of the console (PlayStation, Xbox, etc)?",
+              "answer": "Xbox"
+            },
+            {
+              "question": "What is the colour of the console?",
+              "answer": "white"
+            },
+            {
+              "question": "Any accessories with the console?",
+              "answer": "charging dock"
+            }
+          ]
+        },
+        {
+          "item": "Calculator",
+          "category": "electronics",
+          "description": "A black Casio scientific calculator with a missing cover",
+          "questions": [
+            {
+              "question": "What is the brand of the calculator?",
+              "answer": "Casio"
+            },
+            {
+              "question": "What is the colour of the calculator?",
+              "answer": "black"
+            },
+            {
+              "question": "What is the type of the calculator (normal, scientific, etc)?",
+              "answer": "scientific"
+            }
+          ]
+        },
+        {
+          "item": "Calculator",
+          "category": "electronics",
+          "description": "A white Texas Instruments normal calculator with solar power",
+          "questions": [
+            {
+              "question": "What is the brand of the calculator?",
+              "answer": "Texas Instruments"
+            },
+            {
+              "question": "What is the colour of the calculator?",
+              "answer": "white"
+            },
+            {
+              "question": "What is the type of the calculator (normal, scientific, etc)?",
+              "answer": "normal"
+            }
+          ]
+        },
+        {
+          "item": "Pendrive",
+          "category": "electronics",
+          "description": "A blue Kingston pendrive with a capless design",
+          "questions": [
+            {
+              "question": "What is the brand of the pendrive?",
+              "answer": "Kingston"
+            },
+            {
+              "question": "What is the colour of the pendrive?",
+              "answer": "blue"
+            },
+            {
+              "question": "What is the shape of the pendrive?",
+              "answer": "capless"
+            }
+          ]
+        },
+        {
+          "item": "Pendrive",
+          "category": "electronics",
+          "description": "A red SanDisk pendrive with a sliding mechanism",
+          "questions": [
+            {
+              "question": "What is the brand of the pendrive?",
+              "answer": "SanDisk"
+            },
+            {
+              "question": "What is the colour of the pendrive?",
+              "answer": "red"
+            },
+            {
+              "question": "What is the shape of the pendrive?",
+              "answer": "sliding"
+            }
+          ]
+        },
+        {
+          "item": "Mouse",
+          "category": "electronics",
+          "description": "A wireless black Logitech mouse with ergonomic design",
+          "questions": [
+            {
+              "question": "What is the connectivity type of the mouse (wired, wireless)?",
+              "answer": "wireless"
+            },
+            {
+              "question": "What is the colour of the mouse?",
+              "answer": "black"
+            },
+            {
+              "question": "What is the brand of the mouse?",
+              "answer": "Logitech"
+            }
+          ]
+        },
+        {
+          "item": "Mouse",
+          "category": "electronics",
+          "description": "A wired white HP mouse with a scroll wheel",
+          "questions": [
+            {
+              "question": "What is the connectivity type of the mouse (wired, wireless)?",
+              "answer": "wired"
+            },
+            {
+              "question": "What is the colour of the mouse?",
+              "answer": "white"
+            },
+            {
+              "question": "What is the brand of the mouse?",
+              "answer": "HP"
+            }
+          ]
+        },
+        {
+          "item": "Portable printer",
+          "category": "electronics",
+          "description": "A black HP portable printer with a built-in battery",
+          "questions": [
+            {
+              "question": "What is the brand of the printer?",
+              "answer": "HP"
+            },
+            {
+              "question": "What is the colour of the printer?",
+              "answer": "black"
+            },
+            {
+              "question": "Does the printer come with any additional accessories?",
+              "answer": "built-in battery"
+            }
+          ]
+        },
+        {
+          "item": "Portable printer",
+          "category": "electronics",
+          "description": "A white Canon portable printer with extra ink cartridges",
+          "questions": [
+            {
+              "question": "What is the brand of the printer?",
+              "answer": "Canon"
+            },
+            {
+              "question": "What is the colour of the printer?",
+              "answer": "white"
+            },
+            {
+              "question": "Does the printer come with any additional accessories?",
+              "answer": "extra ink cartridges"
+            }
+          ]
+        },
+        {
+          "item": "Headphones",
+          "category": "electronics",
+          "description": "Black Bose overhead headphones with noise cancellation and a small scratch on the right earcup",
+          "questions": [
+            {
+              "question": "What is the brand of the headphone?",
+              "answer": "Bose"
+            },
+            {
+              "question": "What is the colour of the headphone?",
+              "answer": "black"
+            },
+            {
+              "question": "What is the type of the headphone (overhead, neckband, etc)?",
+              "answer": "overhead"
+            },
+            {
+              "question": "Any wear and tear or faults in the headphone?",
+              "answer": "small scratch on the right earcup"
+            }
+          ]
+        },
+        {
+          "item": "Headphones",
+          "category": "electronics",
+          "description": "White Sony neckband headphones with volume control and no visible damage",
+          "questions": [
+            {
+              "question": "What is the brand of the headphone?",
+              "answer": "Sony"
+            },
+            {
+              "question": "What is the colour of the headphone?",
+              "answer": "white"
+            },
+            {
+              "question": "What is the type of the headphone (overhead, neckband, etc)?",
+              "answer": "neckband"
+            },
+            {
+              "question": "Any wear and tear or faults in the headphone?",
+              "answer": "no visible damage"
+            }]
+        },
+               {
+                "item": "Wallet",
+                "category": "accessories",
+                "description": "A black leather bifold wallet with minor scratches",
+                "questions": [
+                  {
+                    "question": "What is the type of the wallet (bifold, trifold, etc)?",
+                    "answer": "bifold"
+                  },
+                  {
+                    "question": "What is the colour of the wallet?",
+                    "answer": "black"
+                  },
+                  {
+                    "question": "What is the material of the wallet?",
+                    "answer": "leather"
+                  },
+                  {
+                    "question": "Any visible wear and tear in the wallet?",
+                    "answer": "minor scratches"
+                  }
+                ]
+              },
+             {
+                "item": "Wallet",
+                "category": "accessories",
+                "description": "A brown canvas trifold wallet with no visible damage",
+                "questions": [
+                  {
+                    "question": "What is the type of the wallet (bifold, trifold, etc)?",
+                    "answer": "trifold"
+                  },
+                  {
+                    "question": "What is the colour of the wallet?",
+                    "answer": "brown"
+                  },
+                  {
+                    "question": "What is the material of the wallet?",
+                    "answer": "canvas"
+                  },
+                  {
+                    "question": "Any visible wear and tear in the wallet?",
+                    "answer": "no"
+                  }
+                ]
+              },
+              {
+                "item": "Sunglasses",
+                "category": "accessories",
+                "description": "Black frame sunglasses with round lenses and dark tint",
+                "questions": [
+                  {
+                    "question": "What is the colour of the frame?",
+                    "answer": "black"
+                  },
+                  {
+                    "question": "What is the shape of the lens?",
+                    "answer": "round"
+                  },
+                  {
+                    "question": "What is the tint of the lenses?",
+                    "answer": "dark"
+                  }
+                ]
+              },
+              {
+                "item": "Sunglasses",
+                "category": "accessories",
+                "description": "Brown frame sunglasses with aviator lenses and light tint",
+                "questions": [
+                  {
+                    "question": "What is the colour of the frame?",
+                    "answer": "brown"
+                  },
+                  {
+                    "question": "What is the shape of the lens?",
+                    "answer": "aviator"
+                  },
+                  {
+                    "question": "What is the tint of the lenses?",
+                    "answer": "light"
+                  }
+                ]
+              },
+              {
+                "item": "Ring",
+                "category": "accessories",
+                "description": "A silver ring with a medium size and embedded with a small diamond",
+                "questions": [
+                  {
+                    "question": "What is the average size of the ring?",
+                    "answer": "medium"
+                  },
+                  {
+                    "question": "What is the colour of the ring?",
+                    "answer": "silver"
+                  },
+                  {
+                    "question": "What is the material of the ring?",
+                    "answer": "silver"
+                  }
+                ]
+              },
+              {
+                "item": "Ring",
+                "category": "accessories",
+                "description": "A gold ring with a large size and engraved with intricate patterns",
+                "questions": [
+                  {
+                    "question": "What is the average size of the ring?",
+                    "answer": "large"
+                  },
+                  {
+                    "question": "What is the colour of the ring?",
+                    "answer": "gold"
+                  },
+                  {
+                    "question": "What is the material of the ring?",
+                    "answer": "gold"
+                  }
+                ]
+              },
+              {
+                "item": "Neckwear",
+                "category": "accessories",
+                "description": "A gold necklace with a delicate chain and a heart-shaped pendant",
+                "questions": [
+                  {
+                    "question": "What is the type of neckwear (necklace, chain, etc)?",
+                    "answer": "necklace"
+                  },
+                  {
+                    "question": "What is the colour of the neckwear?",
+                    "answer": "gold"
+                  },
+                  {
+                    "question": "What is the material of the neckwear?",
+                    "answer": "gold"
+                  }
+                ]
+              },
+              {
+                "item": "Neckwear",
+                "category": "accessories",
+                "description": "A silver chain with a thick design and no pendant",
+                "questions": [
+                  {
+                    "question": "What is the type of neckwear (necklace, chain, etc)?",
+                    "answer": "chain"
+                  },
+                  {
+                    "question": "What is the colour of the neckwear?",
+                    "answer": "silver"
+                  },
+                  {
+                    "question": "What is the material of the neckwear?",
+                    "answer": "silver"
+                  }
+                ]
+              },
+              {
+                "item": "Belt",
+                "category": "accessories",
+                "description": "A black leather belt with a metallic buckle and a visible logo",
+                "questions": [
+                  {
+                    "question": "What is the colour of the belt?",
+                    "answer": "black"
+                  },
+                  {
+                    "question": "What is the material of the belt?",
+                    "answer": "leather"
+                  },
+                  {
+                    "question": "What is the material of the buckle?",
+                    "answer": "metal"
+                  }
+                ]
+              },
+              {
+                "item": "Belt",
+                "category": "accessories",
+                "description": "A brown synthetic belt with a plastic buckle and no logos",
+                "questions": [
+                  {
+                    "question": "What is the colour of the belt?",
+                    "answer": "brown"
+                  },
+                  {
+                    "question": "What is the material of the belt?",
+                    "answer": "synthetic"
+                  },
+                  {
+                    "question": "What is the material of the buckle?",
+                    "answer": "plastic"
+                  }
+                ]
+              },
+              {
+                "item": "Handbag",
+                "category": "accessories",
+                "description": "A medium-sized black handbag with a gold logo and containing a wallet",
+                "questions": [
+                  {
+                    "question": "What is the approximate size of the handbag?",
+                    "answer": "medium"
+                  },
+                  {
+                    "question": "What is the colour of the handbag?",
+                    "answer": "black"
+                  },
+                  {
+                    "question": "Describe any logos in the handbag?",
+                    "answer": "gold logo"
+                  }
+                ]
+              },
+              {
+                "item": "Handbag",
+                "category": "accessories",
+                "description": "A large red handbag with no logos and containing makeup items",
+                "questions": [
+                  {
+                    "question": "What is the approximate size of the handbag?",
+                    "answer": "large"
+                  },
+                  {
+                    "question": "What is the colour of the handbag?",
+                    "answer": "red"
+                  },
+                  {
+                    "question": "Describe any logos in the handbag?",
+                    "answer": "none"
+                  }
+                ]
+              },
+              {
+                "item": "Umbrella",
+                "category": "accessories",
+                "description": "A blue umbrella with a wooden handle and no visible damage",
+                "questions": [
+                  {
+                    "question": "What is the brand of the umbrella?",
+                    "answer": "Unknown"
+                  },
+                  {
+                    "question": "What is the colour of the umbrella?",
+                    "answer": "blue"
+                  },
+                  {
+                    "question": "Describe any visible damage and features?",
+                    "answer": "no visible damage"
+                  }
+                ]
+              },
+              {
+                "item": "Umbrella",
+                "category": "accessories",
+                "description": "A red umbrella with a plastic handle and a small tear",
+                "questions": [
+                  {
+                    "question": "What is the brand of the umbrella?",
+                    "answer": "Unknown"
+                  },
+                  {
+                    "question": "What is the colour of the umbrella?",
+                    "answer": "red"
+                  },
+                  {
+                    "question": "Describe any visible damage and features?",
+                    "answer": "small tear"
+                  }
+                ]
+              },
+              {
+                "item": "Keychain",
+                "category": "accessories",
+                "description": "A round metal keychain with a blue enamel finish and two keys attached",
+                "questions": [
+                  {
+                    "question": "What is the shape of the keychain?",
+                    "answer": "round"
+                  },
+                  {
+                    "question": "What is the material of the keychain?",
+                    "answer": "metal"
+                  },
+                  {
+                    "question": "What is the colour of the keychain?",
+                    "answer": "blue"
+                  }
+                ]
+              },
+              {
+                "item": "Keychain",
+                "category": "accessories",
+                "description": "A square plastic keychain with a red finish and three keys attached",
+                "questions": [
+                  {
+                    "question": "What is the shape of the keychain?",
+                    "answer": "square"
+                  },
+                  {
+                    "question": "What is the material of the keychain?",
+                    "answer": "plastic"
+                  },
+                  {
+                    "question": "What is the colour of the keychain?",
+                    "answer": "red"
+                  }
+                ]
+              },
+              {
+                "item": "Key",
+                "category": "accessories",
+                "description": "A bunch of four silver keys with a small metal keychain",
+                "questions": [
+                  {
+                    "question": "How many keys are there in the bunch?",
+                    "answer": "four"
+                  },
+                  {
+                    "question": "What is the colour of the key?",
+                    "answer": "silver"
+                  },
+                  {
+                    "question": "Does the key come with a keychain?",
+                    "answer": "yes"
+                  }
+                ]
+              },
+              {
+                "item": "Key",
+                "category": "accessories",
+                "description": "A single gold key with no keychain",
+                "questions": [
+                  {
+                    "question": "How many keys are there in the bunch?",
+                    "answer": "one"
+                  },
+                  {
+                    "question": "What is the colour of the key?",
+                    "answer": "gold"
+                  },
+                  {
+                    "question": "Does the key come with a keychain?",
+                    "answer": "no"
+                  }
+                ]
+              },
+              {
+                "item": "Brooch/Pin",
+                "category": "accessories",
+                "description": "A star-shaped silver pin with intricate designs",
+                "questions": [
+                  {
+                    "question": "What is the shape of the pin?",
+                    "answer": "star"
+                  },
+                  {
+                    "question": "What is the material used?",
+                    "answer": "silver"
+                  }
+                ]
+              },
+              {
+                "item": "Brooch/Pin",
+                "category": "accessories",
+                "description": "A circular gold pin with a minimalist design",
+                "questions": [
+                  {
+                    "question": "What is the shape of the pin?",
+                    "answer": "circular"
+                  },
+                  {
+                    "question": "What is the material used?",
+                    "answer": "gold"
+                  }
+                ]
+              },
+              {
+                "item": "Hair accessories",
+                "category": "accessories",
+                "description": "A black plastic hair clip with decorative rhinestones",
+                "questions": [
+                  {
+                    "question": "What is the type of hair accessory (pin, clip, hairband, etc)?",
+                    "answer": "clip"
+                  },
+                  {
+                    "question": "What is the material used?",
+                    "answer": "plastic"
+                  },
+                  {
+                    "question": "What is the shape of the accessory?",
+                    "answer": "clip"
+                  }
+                ]
+              },
+              {
+                "item": "Hair accessories",
+                "category": "accessories",
+                "description": "A red fabric hairband with a bow",
+                "questions": [
+                  {
+                    "question": "What is the type of hair accessory (pin, clip, hairband, etc)?",
+                    "answer": "hairband"
+                  },
+                  {
+                    "question": "What is the material used?",
+                    "answer": "fabric"
+                  },
+                  {
+                    "question": "What is the shape of the accessory?",
+                    "answer": "hairband"
+                  }
+                ]
+              },
+              {
+                "item": "Glasses case",
+                "category": "accessories",
+                "description": "A rectangular black leather glasses case containing reading glasses",
+                "questions": [
+                  {
+                    "question": "What is the shape of the box?",
+                    "answer": "rectangular"
+                  },
+                  {
+                    "question": "What is the colour of the box?",
+                    "answer": "black"
+                  },
+                  {
+                    "question": "What is the material of the box?",
+                    "answer": "leather"
+                  }
+                ]
+              },
+              {
+                "item": "Glasses case",
+                "category": "accessories",
+                "description": "A round blue plastic glasses case containing sunglasses",
+                "questions": [
+                  {
+                    "question": "What is the shape of the box?",
+                    "answer": "round"
+                  },
+                  {
+                    "question": "What is the colour of the box?",
+                    "answer": "blue"
+                  },
+                  {
+                    "question": "What is the material of the box?",
+                    "answer": "plastic"
+                  }
+                ]
+              },
+              {
+                "item": "Bracelet",
+                "category": "accessories",
+                "description": "A silver chain bracelet with a heart-shaped charm",
+                "questions": [
+                  {
+                    "question": "What is the type of bracelet (bangle, chain, leather, etc)?",
+                    "answer": "chain"
+                  },
+                  {
+                    "question": "What is the colour of the bracelet?",
+                    "answer": "silver"
+                  }
+                ]
+              },
+              {
+                "item": "Bracelet",
+                "category": "accessories",
+                "description": "A leather bangle bracelet with metal studs",
+                "questions": [
+                  {
+                    "question": "What is the type of bracelet (bangle, chain, leather, etc)?",
+                    "answer": "bangle"
+                  },
+                  {
+                    "question": "What is the colour of the bracelet?",
+                    "answer": "black"
+                  }
+                ]
+              },
+              {
+                "item": "Watch",
+                "category": "accessories",
+                "description": "A stainless steel watch with a black strap and round dial",
+                "questions": [
+                  {
+                    "question": "What is the material of the strap?",
+                    "answer": "stainless steel"
+                  },
+                  {
+                    "question": "What is the colour of the strap?",
+                    "answer": "black"
+                  },
+                  {
+                    "question": "What is the shape of the dial?",
+                    "answer": "round"
+                  },
+                  {
+                    "question": "What is the brand of the watch?",
+                    "answer": "Unknown"
+                  }
+                ]
+              },
+              {
+                "item": "Watch",
+                "category": "accessories",
+                "description": "A leather watch with a brown strap and square dial",
+                "questions": [
+                  {
+                    "question": "What is the material of the strap?",
+                    "answer": "leather"
+                  },
+                  {
+                    "question": "What is the colour of the strap?",
+                    "answer": "brown"
+                  },
+                  {
+                    "question": "What is the shape of the dial?",
+                    "answer": "square"
+                  },
+                  {
+                    "question": "What is the brand of the watch?",
+                    "answer": "Unknown"
+                  }
+                ]
+              },
+                    {
+                      "item": "phone",
+                      "category": "electronics",
+                      "description": "A blue Samsung Galaxy S22 Ultra with visible scratches on the back.",
+                      "questions": [
+                        {
+                          "question": "What is the brand of the phone?",
+                          "answer": "Samsung"
+                        },
+                        {
+                          "question": "What is the color of the phone?",
+                          "answer": "blue"
+                        }
+                      ]
+                    },
+                    {
+                      "item": "Novel",
+                      "category": "books",
+                      "description": "A suspense thriller novel with a plot revolving around a detective solving a murder mystery in a small town.",
+                      "questions": [
+                        {
+                          "question": "What is the title of the novel?",
+                          "answer": "suspense thriller"
+                        },
+                        {
+                          "question": "Who is the author of the novel?",
+                          "answer": "detective"
+                        }
+                      ]
+                    },
+                    {
+                      "item": "textbook",
+                      "category": "books",
+                      "description": "An advanced calculus textbook covering topics such as differential equations and vector calculus.",
+                      "questions": [
+                        {
+                          "question": "What is the subject of the textbook?",
+                          "answer": "advanced calculus"
+                        },
+                        {
+                          "question": "Who is the author of the textbook?",
+                          "answer": "differential equations"
+                        }
+                      ]
+                    },
+                    {
+                      "item": "magazines",
+                      "category": "books",
+                      "description": "A monthly fashion magazine featuring articles on the latest trends in clothing and accessories.",
+                      "questions": [
+                        {
+                          "question": "What is the name of the magazine?",
+                          "answer": "fashion"
+                        },
+                        {
+                          "question": "What is name of the publisher?",
+                          "answer": "monthly"
+                        }
+                      ]
+                    },
+                    {
+                      "item": "Notebook",
+                      "category": "books",
+                      "description": "A college-ruled notebook with 200 pages, ideal for taking notes in lectures and seminars.",
+                      "questions": [
+                        {
+                          "question": "What is the name of the owner?",
+                          "answer": "college-ruled"
+                        },
+                        {
+                          "question": "What is the brand of the notebook?",
+                          "answer": "200 pages"
+                        },
+                        {
+                          "question": "How many pages are there in the notebook?",
+                          "answer": "200"
+                        }
+                      ]
+                    },
+                    {
+                      "item": "Dictionary",
+                      "category": "books",
+                      "description": "A comprehensive English dictionary published by Oxford University Press, suitable for students and professionals.",
+                      "questions": [
+                        {
+                          "question": "What is the publishing company of the dictionary?",
+                          "answer": "Oxford University Press"
+                        },
+                        {
+                          "question": "what type of dictionary is it?",
+                          "answer": "English"
+                        }
+                      ]
+                    },
+                    {
+                      "item": "Badminton racket",
+                      "category": "sports accessories",
+                      "description": "A lightweight Yonex Arcsaber 11 badminton racket with a G4 grip size, known for its precision and control.",
+                      "questions": [
+                        {
+                          "question": "What is the brand of the racket?",
+                          "answer": "Yonex Arcsaber 11"
+                        },
+                        {
+                          "question": "What is the grip size of the racket?",
+                          "answer": "G4"
+                        },
+                        {
+                          "question": "What is the model of the racket?",
+                          "answer": "precision and control"
+                        }
+                      ]
+                    },
+                    {
+                      "item": "Tennis ball",
+                      "category": "sports accessories",
+                      "description": "A can of three yellow Wilson US Open tennis balls, suitable for all court surfaces.",
+                      "questions": [
+                        {
+                          "question": "What is the colour of the ball?",
+                          "answer": "yellow"
+                        }
+                      ]
+                    },
+                    {
+                      "item": "Cricket bat",
+                      "category": "sports accessories",
+                      "description": "A GM Icon 606 cricket bat, size SH, with a red rubber grip and no visible cracks or marks.",
+                      "questions": [
+                        {
+                          "question": "What is the brand of the bat?",
+                          "answer": "GM Icon 606"
+                        },
+                        {
+                          "question": "What is the size of the bat?",
+                          "answer": "SH"
+                        },
+                        {
+                          "question": "What is the colour of the grip?",
+                          "answer": "red"
+                        },
+                        {
+                          "question": "Is there any cracks or marks in the bat?",
+                          "answer": "no visible cracks or marks"
+                        }
+                      ]
+                    },
+                    {
+                      "item": "Cricket ball",
+                      "category": "sports accessories",
+                      "description": "A red leather Kookaburra cricket ball used in professional cricket matches.",
+                      "questions": [
+                        {
+                          "question": "What is type of ball?",
+                          "answer": "leather"
+                        },
+                        {
+                          "question": "What is the colour of the ball?",
+                          "answer": "red"
+                        }
+                      ]
+                    },
+                    {
+                      "item": "Football",
+                      "category": "sports accessories",
+                      "description": "A size 5 Adidas Tango Club football suitable for both training and matches.",
+                      "questions": [
+                        {
+                          "question": "What is the size of the ball?",
+                          "answer": "size 5"
+                        },
+                        {
+                          "question": "What is the brand of the ball?",
+                          "answer": "Adidas Tango Club"
+                        }
+                      ]
+                    },
+                    {
+                      "item": "Basketball",
+                      "category": "sports accessories",
+                      "description": "An NBA Spalding street basketball, size 7, designed for outdoor use.",
+                      "questions": [
+                        {
+                          "question": "What is the size of the ball?",
+                          "answer": "size 7"
+                        },
+                        {
+                          "question": "What is the brand of the ball?",
+                          "answer": "NBA Spalding"
+                        }
+                      ]
+                    },
+                    {
+                      "item": "Volleyball",
+                      "category": "sports accessories",
+                      "description": "A Mikasa VLS300 beach volleyball, official FIVB game ball, designed for professional beach volleyball tournaments.",
+                      "questions": [
+                        {
+                          "question": "What is the size of the ball?",
+                          "answer": "official FIVB game ball"
+                        },
+                        {
+                          "question": "What is the colour of the ball?",
+                          "answer": "yellow and blue"
+                        }
+                      ]
+                    },
+                    {
+                      "item": "pen",
+                      "category": "stationery",
+                      "description": "A black Pilot G2 gel pen with a comfortable rubber grip, perfect for everyday writing tasks.",
+                      "questions": [
+                        {
+                          "question": "What is the colour of the body?",
+                          "answer": "black"
+                        },
+                        {
+                          "question": "What is the colour of the ink?",
+                          "answer": "black"
+                        },
+                        {
+                          "question": "What is the brand of the Pen?",
+                          "answer": "Pilot G2"
+                        },
+                        {
+                          "question": "What type is the pen?",
+                          "answer": "gel"
+                        }
+                      ]
+                    },
+                    {
+                      "item": "pencil",
+                      "category": "stationery",
+                      "description": "A set of 12 Staedtler Mars Lumograph HB wooden pencils, ideal for sketching and technical drawing.",
+                      "questions": [
+                        {
+                          "question": "What type of pencil?",
+                          "answer": "wooden"
+                        },
+                        {
+                          "question": "What is the colour of the pencil?",
+                          "answer": "black and yellow"
+                        }
+                      ]
+                    },
+                    {
+                      "item": "Highlighter",
+                      "category": "stationery",
+                      "description": "A pack of 6 assorted colors of Zebra Mildliner double-ended highlighters, featuring a broad and fine tip.",
+                      "questions": [
+                        {
+                          "question": "What is the colour of the body?",
+                          "answer": "assorted colors"
+                        },
+                        {
+                          "question": "What is the colour of the ink?",
+                          "answer": "assorted colors"
+                        },
+                        {
+                          "question": "What is the brand of the highlighter",
+                          "answer": "Zebra Mildliner"
+                        }
+                      ]
+                    },
+                    {
+                      "item": "Eraser",
+                      "category": "stationery",
+                      "description": "A pink Faber-Castell dust-free eraser with a protective sleeve, suitable for clean erasing on various paper types.",
+                      "questions": [
+                        {
+                          "question": "What is the colour of the eraser?",
+                          "answer": "pink"
+                        },
+                        {
+                          "question": "Does the eraser have a cover?",
+                          "answer": "protective sleeve"
+                        }
+                      ]
+                    },
+                    {
+                      "item": "ruler",
+                      "category": "stationery",
+                      "description": "A 12-inch metal Westcott ruler with non-slip cork backing, ideal for precise measurements and drafting.",
+                      "questions": [
+                        {
+                          "question": "What is the material?",
+                          "answer": "metal"
+                        },
+                        {
+                          "question": "What is the length of the ruler?",
+                          "answer": "12-inch"
+                        },
+                        {
+                          "question": "What is the brand of the ruler?",
+                          "answer": "Westcott"
+                        }
+                      ]
+                    },
+  
+                        {
+                          "item": "Stapler",
+                          "category": "stationery",
+                          "description": "A black mini stapler with silver accents and a visible company logo.",
+                          "questions": [
+                            {
+                              "question": "What is the colour of the stapler?",
+                              "answer": "black"
+                            },
+                            {
+                              "question": "What is the size of the stapler?",
+                              "answer": "mini"
+                            }
+                          ]
+                        },
+                        {
+                          "item": "Box of paper clip",
+                          "category": "stationery",
+                          "description": "A transparent plastic box of red and green paper clips with a brand logo on top.",
+                          "questions": [
+                            {
+                              "question": "Describe the box color?",
+                              "answer": "transparent"
+                            },
+                            {
+                              "question": "What is the brand of the paper clips?",
+                              "answer": "brand logo"
+                            }
+                          ]
+                        },
+                        {
+                          "item": "Marker",
+                          "category": "stationery",
+                          "description": "A blue permanent marker with a white cap and a distinct brand name printed on the side.",
+                          "questions": [
+                            {
+                              "question": "What colour is the body of the marker?",
+                              "answer": "blue"
+                            },
+                            {
+                              "question": "What is the colour of the ink?",
+                              "answer": "blue"
+                            }
+                          ]
+                        },
+                        {
+                          "item": "ID card",
+                          "category": "Personal items",
+                          "description": "An employee ID card with the name 'John Doe' and an address in New York.",
+                          "questions": [
+                            {
+                              "question": "What is the name on the ID card?",
+                              "answer": "John Doe"
+                            },
+                            {
+                              "question": "Describe the address or pincode?",
+                              "answer": "New York"
+                            }
+                          ]
+                        },
+                        {
+                          "item": "Passport",
+                          "category": "Personal items",
+                          "description": "A blue passport with the name 'Jane Smith', issued by the United States, containing visas from Canada and UK.",
+                          "questions": [
+                            {
+                              "question": "What is the name in the passport?",
+                              "answer": "Jane Smith"
+                            },
+                            {
+                              "question": "What is the colour of the passport?",
+                              "answer": "blue"
+                            },
+                            {
+                              "question": "What is the country of the passport?",
+                              "answer": "United States"
+                            },
+                            {
+                              "question": "What are the visas in the passport?",
+                              "answer": "Canada and UK"
+                            }
+                          ]
+                        },
+                        {
+                          "item": "Drivers license",
+                          "category": "Personal items",
+                          "description": "A driver's license with the name 'Michael Brown', issued on 05/10/2023, and an address in Los Angeles.",
+                          "questions": [
+                            {
+                              "question": "What is the name on the license?",
+                              "answer": "Michael Brown"
+                            },
+                            {
+                              "question": "What is the date of issue of the license?",
+                              "answer": "05/10/2023"
+                            },
+                            {
+                              "question": "What is the address on the license?",
+                              "answer": "Los Angeles"
+                            }
+                          ]
+                        },
+                        {
+                          "item": "Credit/Debit card",
+                          "category": "Personal items",
+                          "description": "A Visa credit card with the name 'Sarah Johnson', issued by Chase Bank, in blue colour.",
+                          "questions": [
+                            {
+                              "question": "What is the name on the card?",
+                              "answer": "Sarah Johnson"
+                            },
+                            {
+                              "question": "Which bank issued the card?",
+                              "answer": "Chase Bank"
+                            },
+                            {
+                              "question": "What is the colour of the card?",
+                              "answer": "blue"
+                            }
+                          ]
+                        },
+                        {
+                          "item": "Library card",
+                          "category": "Personal items",
+                          "description": "A student library card with the name 'Emily Wilson' for the academic year 2023-2024.",
+                          "questions": [
+                            {
+                              "question": "What is the name on the card?",
+                              "answer": "Emily Wilson"
+                            },
+                            {
+                              "question": "What is the academic period of the student?",
+                              "answer": "2023-2024"
+                            }
+                          ]
+                        },
+                        {
+                          "item": "Bus pass",
+                          "category": "Personal items",
+                          "description": "A bus pass with the name 'David Lee' for the academic semester Spring 2023.",
+                          "questions": [
+                            {
+                              "question": "What is the name of the owner?",
+                              "answer": "David Lee"
+                            },
+                            {
+                              "question": "What is the academic era of the student?",
+                              "answer": "Spring 2023"
+                            }
+                          ]
+                        },
+                        {
+                          "item": "Event ticket",
+                          "category": "Personal items",
+                          "description": "A concert ticket for the band 'XYZ', scheduled at Madison Square Garden on 12/10/2024, priced at $100.",
+                          "questions": [
+                            {
+                              "question": "Describe the location of the event?",
+                              "answer": "Madison Square Garden"
+                            },
+                            {
+                              "question": "Describe the date and time of the event?",
+                              "answer": "12/10/2024"
+                            },
+                            {
+                              "question": "Describe the amount for the ticket?",
+                              "answer": "$100"
+                            }
+                          ]
+                        },
+                        {
+                          "item": "Sneakers",
+                          "category": "Footwear",
+                          "description": "Black Adidas sneakers with white stripes, size 9.",
+                          "questions": [
+                            {
+                              "question": "What is colour of the sneaker?",
+                              "answer": "Black"
+                            },
+                            {
+                              "question": "What is the brand of the sneaker?",
+                              "answer": "Adidas"
+                            },
+                            {
+                              "question": "What is the size of the sneaker?",
+                              "answer": "9"
+                            }
+                          ]
+                        },
+                        {
+                          "item": "Sandals",
+                          "category": "footwear",
+                          "description": "Brown leather sandals with a buckle strap design.",
+                          "questions": [
+                            {
+                              "question": "What is the colour of the sandal?",
+                              "answer": "Brown"
+                            },
+                            {
+                              "question": "What is the style of the sandal?",
+                              "answer": "buckle strap"
+                            },
+                            {
+                              "question": "What is the size of the sandal?",
+                              "answer": ""
+                            }
+                          ]
+                        },
+                        {
+                          "item": "Boots",
+                          "category": "footwear",
+                          "description": "Black leather ankle boots from Timberland.",
+                          "questions": [
+                            {
+                              "question": "What is the type of boots(ankle boots,knee high?",
+                              "answer": "ankle boots"
+                            },
+                            {
+                              "question": "What is the colour of the boots?",
+                              "answer": "Black"
+                            },
+                            {
+                              "question": "What is the brand of the boots?",
+                              "answer": "Timberland"
+                            },
+                            {
+                              "question": "What is the size of the boots?",
+                              "answer": ""
+                            }
+                          ]
+                        },
+                        {
+                          "item": "Slippers",
+                          "category": "footwear",
+                          "description": "Indoor slippers with a soft cotton lining, light blue in colour.",
+                          "questions": [
+                            {
+                              "question": "Is it indoor slippers or outdoor slippers?",
+                              "answer": "indoor slippers"
+                            },
+                            {
+                              "question": "What is the colour of the slippers?",
+                              "answer": "light blue"
+                            },
+                            {
+                              "question": "What is the brand of the Slippers?",
+                              "answer": ""
+                            },
+                            {
+                              "question": "What is the size of the Slippers?",
+                              "answer": ""
+                            }
+                          ]
+                        },
+                        {
+                          "item": "Loafers",
+                          "category": "footwear",
+                          "description": "Brown leather loafers with a classic design.",
+                          "questions": [
+                            {
+                              "question": "What is the colour of the loafers?",
+                              "answer": "Brown"
+                            },
+                            {
+                              "question": "What is the brand of the loafers?",
+                              "answer": ""
+                            },
+                            {
+                              "question": "what is the size of the loafers?",
+                              "answer": ""
+                            }
+                          ]
+                        },
+                        {
+                          "item": "Shoes",
+                          "category": "footwear",
+                          "description": "Black leather formal shoes with minimal wear and a logo on the side.",
+                          "questions": [
+                            {
+                              "question": "What is the colour of the shoes?",
+                              "answer": "Black"
+                            },
+                            {
+                              "question": "What is the brand of the shoes?",
+                              "answer": ""
+                            },
+                            {
+                              "question": "Describe any visible markings or wear?",
+                              "answer": "minimal wear and logo on the side"
+                            },
+                            {
+                              "question": "What is the size of the shoes?",
+                              "answer": ""
+                            }
+                          ]
+                        },
+                        {
+                          "item": "Jacket",
+                          "category": "Clothing",
+                          "description": "a black leather jacket with silver zippers",
+                          "questions": [
+                            {
+                              "question": "What is the colour of the jacket?",
+                              "answer": "black"
+                            },
+                            {
+                              "question": "What is the size of the jacket?",
+                              "answer": "not specified"
+                            }
+                          ]
+                        },
+                        {
+                          "item": "Scarf",
+                          "category": "Clothing",
+                          "description": "a wool scarf with red and blue stripes",
+                          "questions": [
+                            {
+                              "question": "What is the colour of the scarf?",
+                              "answer": "red and blue"
+                            },
+                            {
+                              "question": "Describe the patterns in the scarf?",
+                              "answer": "stripes"
+                            }
+                          ]
+                        },
+                        {
+                          "item": "Hat/Cap",
+                          "category": "Clothing",
+                          "description": "a black baseball cap with a small logo on the front",
+                          "questions": [
+                            {
+                              "question": "What is the style of the cap (baseball, beanie)?",
+                              "answer": "baseball"
+                            },
+                            {
+                              "question": "What is the colour of the cap?",
+                              "answer": "black"
+                            }
+                          ]
+                        },
+                        {
+                          "item": "Sweater",
+                          "category": "Clothing",
+                          "description": "a grey wool sweater with a V-neck",
+                          "questions": [
+                            {
+                              "question": "What is the colour of the sweater?",
+                              "answer": "grey"
+                            },
+                            {
+                              "question": "What is the fabric of the sweater?",
+                              "answer": "wool"
+                            }
+                          ]
+                        },
+                        {
+                          "item": "Pants",
+                          "category": "Clothing",
+                          "description": "khaki cotton pants by Levi's",
+                          "questions": [
+                            {
+                              "question": "What is the fabric of the pants?",
+                              "answer": "cotton"
+                            },
+                            {
+                              "question": "What is the colour of the pants?",
+                              "answer": "khaki"
+                            },
+                            {
+                              "question": "What is the brand of the pants?",
+                              "answer": "Levi's"
+                            }
+                          ]
+                        },
+                        {
+                          "item": "Shirt",
+                          "category": "Clothing",
+                          "description": "a blue denim shirt in size medium",
+                          "questions": [
+                            {
+                              "question": "What is the colour of the shirt?",
+                              "answer": "blue"
+                            },
+                            {
+                              "question": "What is the fabric of the shirt?",
+                              "answer": "denim"
+                            },
+                            {
+                              "question": "What is the size of the shirt?",
+                              "answer": "medium"
+                            }
+                          ]
+                        },
+                        {
+                          "item": "Blouse",
+                          "category": "Clothing",
+                          "description": "a floral silk blouse in size small",
+                          "questions": [
+                            {
+                              "question": "What is the colour of the blouse?",
+                              "answer": "floral"
+                            },
+                            {
+                              "question": "What is the fabric of the blouse?",
+                              "answer": "silk"
+                            },
+                            {
+                              "question": "What is the size of the blouse?",
+                              "answer": "small"
+                            }
+                          ]
+                        },
+                        {
+                          "item": "Skirt",
+                          "category": "Clothing",
+                          "description": "a knee-length black pencil skirt",
+                          "questions": [
+                            {
+                              "question": "What is the colour of the skirt?",
+                              "answer": "black"
+                            },
+                            {
+                              "question": "What is the fabric of the skirt?",
+                              "answer": "not specified"
+                            },
+                            {
+                              "question": "What is the size of the skirt?",
+                              "answer": "not specified"
+                            }
+                          ]
+                        },
+                        {
+                          "item": "Socks",
+                          "category": "Clothing",
+                          "description": "a pair of white cotton ankle socks",
+                          "questions": [
+                            {
+                              "question": "What is the colour of the socks?",
+                              "answer": "white"
+                            },
+                            {
+                              "question": "What is the size of socks?",
+                              "answer": "ankle"
+                            }
+                          ]
+                        },
+                        {
+                          "item": "Handkerchief",
+                          "category": "Clothing",
+                          "description": "a linen handkerchief with lace edges",
+                          "questions": [
+                            {
+                              "question": "What is the colour of the handkerchief?",
+                              "answer": "linen"
+                            },
+                            {
+                              "question": "What is the fabric of the handkerchief?",
+                              "answer": "lace"
+                            },
+                            {
+                              "question": "What is the size of the handkerchief?",
+                              "answer": "not specified"
+                            }
+                          ]
+                        },
+                        {
+                          "item": "lip balm",
+                          "category": "beauty and personal care",
+                          "description": "a strawberry-flavored lip balm by Burt's Bees",
+                          "questions": [
+                            {
+                              "question": "What brand is the lip balm?",
+                              "answer": "Burt's Bees"
+                            },
+                            {
+                              "question": "Any specific flavour or tint?",
+                              "answer": "strawberry"
+                            }
+                          ]
+                        },
+                        {
+                          "item": "hair brush",
+                          "category": "beauty and personal care",
+                          "description": "a pink plastic hairbrush with a handle",
+                          "questions": [
+                            {
+                              "question": "Describe the hairbrush color?",
+                              "answer": "pink"
+                            },
+                            {
+                              "question": "Any specific brand or features?",
+                              "answer": "not specified"
+                            }
+                          ]
+                        },
+                        {
+                          "item": "perfume bottle",
+                          "category": "beauty and personal care",
+                          "description": "a Chanel No. 5 perfume bottle with half the fragrance remaining",
+                          "questions": [
+                            {
+                              "question": "Describe the perfume bottle (brand, scent)?",
+                              "answer": "Chanel No. 5"
+                            },
+                            {
+                              "question": "Any visible level of fragrance remaining?",
+                              "answer": "half"
+                            }
+                          ]
+                        },
+                        {
+                          "item": "hand cream",
+                          "category": "beauty and personal care",
+                          "description": "a lavender-scented hand cream by L'Occitane",
+                          "questions": [
+                            {
+                              "question": "What brand is the hand cream?",
+                              "answer": "L'Occitane"
+                            },
+                            {
+                              "question": "What scent is the hand cream?",
+                              "answer": "lavender"
+                            }
+                          ]
+                        },
+                        {
+                          "item": "facemask",
+                          "category": "beauty and personal care",
+                          "description": "a sheet mask by Neutrogena for hydrating skin",
+                          "questions": [
+                            {
+                              "question": "what type of face mask (sheet mask, clay mask)?",
+                              "answer": "sheet mask"
+                            },
+                            {
+                              "question": "What brand is the face mask?",
+                              "answer": "Neutrogena"
+                            }
+                          ]
+                        },
+                        {
+                          "item": "Eyeliner pencil",
+                          "category": "beauty and personal care",
+                          "description": "a black Maybelline eyeliner pencil with a sharpened tip",
+                          "questions": [
+                            {
+                              "question": "Describe brand of eyeliner?",
+                              "answer": "Maybelline"
+                            },
+                            {
+                              "question": "What is the case color of the eyeliner?",
+                              "answer": "black"
+                            }
+                          ]
+                        }
+          ]         
+            
+      

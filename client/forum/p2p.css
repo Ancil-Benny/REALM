@@ -1,0 +1,196 @@
+body {
+    font-family: Arial, sans-serif;
+
+}
+::-webkit-scrollbar{
+    display: none;
+}
+.chat-container {
+    width: 100%;
+    margin: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    
+}
+
+.chat-header {
+    background-color: #000;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.infodata{
+    display: flex;
+    margin-left: 50px;
+}
+.infodata h3{
+    
+    margin-right: 10px;
+}
+
+.header-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.header-actions i {
+    margin-left: 15px;
+}
+
+.chat-messages {
+    height: 400px;
+    overflow-y: scroll;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    align-items: center;
+    position: fixed;
+    bottom: 0; 
+    left: 0; 
+    right: 0;
+ 
+}
+
+.chat-input i {
+    margin-right: 15px;
+}
+
+.chat-input input {
+    flex-grow: 1;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.chat-input button {
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.chat-input button i {
+    font-size: 20px;
+}
+
+.message {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 60%;
+    min-width: calc(20% + 10px);
+    word-wrap: break-word;
+  
+}
+
+.message p {
+    margin: 0;
+    order: 1;
+}
+
+.timestamp {
+    font-size: 0.8em;
+    color: #666;
+    order: 2;
+    align-self: flex-end;
+    margin-top: 5px;
+}
+
+.message.sent {
+    align-self: flex-end;
+    background-color: #bce3d3;
+}
+
+.message.received {
+    align-self: flex-start;
+    background-color: #f5f5f5;
+}
+
+.username {
+    font-weight: bold;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+   
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+   right: 0;
+}
+
+.dropdown-menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+   
+}
+
+.dropdown-menu a:hover {
+    background-color: #f1f1f1;
+}
+
+#sidebar {
+    position: fixed;
+    margin-top: 40%;
+   right: -250px; 
+    width: 175px;
+min-height: 40%;
+background-color: #f9f9f9;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+    transition: right 0.3s ease-in-out;
+    color: #000;
+   
+    overflow-y: scroll;
+}
+
+#sidebar.open {
+    right: 0;
+}
+.listItem{
+    cursor: pointer;
+    padding: 15px;
+    background-color: #f5f5f5;
+    list-style-type: none;
+    text-decoration: none;
+    
+}
+.listItem:hover{
+    background-color: #ddd;
+}
+#itemtitle{
+    background-color: #2cb67d;
+    color: #000;
+    padding: 10px;
+    border-radius: 10px;
+   
+}

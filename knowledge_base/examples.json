@@ -1,0 +1,107 @@
+{
+  "examples": [
+    [
+      {
+        "person": "John Doe",
+        "objects": [
+          {
+            "name": "laptop",
+            "properties": {
+              "color": "silver",
+              "category": "electronics",
+              "brand": "Apple",
+              "extra": "A MacBook Pro with an aluminum design and a cat sticker on the lid."
+            }
+          },
+          {
+            "name": "water bottle",
+            "properties": {
+              "color": "blue",
+              "category": "miscellaneous",
+              "brand": "unknown",
+              "extra": "A plastic water bottle with a torn label."
+            }
+          }
+        ]
+      },
+      {
+        "person": "unknown",
+        "objects": [
+          {
+            "name": "backpack",
+            "properties": {
+              "color": "black",
+              "category": "accessory",
+              "brand": "Nike",
+              "extra": "A large black backpack with a red zipper."
+            }
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "person": "Alice Smith",
+        "objects": [
+          {
+            "name": "cell phone",
+            "properties": {
+              "color": "black",
+              "category": "electronics",
+              "brand": "Samsung",
+              "extra": "A Galaxy smartphone with a red case."
+            }
+          },
+          {
+            "name": "book",
+            "properties": {
+              "color": "green",
+              "category": "stationery",
+              "brand": "unknown",
+              "extra": "A book titled 'Atomic Habits' from author James Clear."
+            }
+          }
+        ]
+      },
+      {
+        "person": "unknown",
+        "objects": [
+          {
+            "name": "umbrella",
+            "properties": {
+              "color": "black",
+              "category": "accessory",
+              "brand": "unknown",
+              "extra": "A foldable umbrella with a broken handle and a university logo printed on the fabric."
+            }
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "person": "Michael Brown",
+        "objects": [
+          {
+            "name": "laptop",
+            "properties": {
+              "color": "gray",
+              "category": "electronics",
+              "brand": "Dell",
+              "extra": "A Dell laptop with an Intel sticker and a scratched bottom panel."
+            }
+          },
+          {
+            "name": "backpack",
+            "properties": {
+              "color": "red",
+              "category": "accessory",
+              "brand": "Adidas",
+              "extra": "A medium-sized backpack with a front pocket and a torn zipper."
+            }
+          }
+        ]
+      }
+    ]
+  ]
+}

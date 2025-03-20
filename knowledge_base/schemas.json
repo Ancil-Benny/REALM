@@ -1,0 +1,18 @@
+{
+  "schema": [
+    {
+      "person": "name or unknown",
+      "objects": [
+        {
+          "name": "object name",
+          "properties": {
+            "color": "color",
+            "category": "category",
+            "brand": "brand",
+            "extra": "description"
+          }
+        }
+      ]
+    }
+  ]
+}

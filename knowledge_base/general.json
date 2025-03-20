@@ -1,0 +1,3 @@
+{
+  "description": "Analyze only bounded objects and persons in image, exclude all other and associate them with detected persons if it belongs to persons."
+}

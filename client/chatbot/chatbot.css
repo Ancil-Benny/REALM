@@ -1,0 +1,564 @@
+
+/* Main content */
+.chatApp-main-content {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+/* Floating chat button */
+.chatApp-button {
+    position: fixed;
+    bottom: 15%;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #000;
+    color: white;
+    border: none;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 1000;
+}
+.chatApp-loading {
+    text-align: center;
+    padding: 20px;
+}
+
+.chatApp-loading-spinner {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: #000;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+.chatApp-button:hover {
+    transform: scale(1.05);
+    background-color: #333;
+}
+
+/* Chat container */
+.chatApp-container {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 380px;
+    height: 550px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+    display: none; /* Initially hidden */
+    z-index: 999;
+    overflow: hidden;
+    transform-origin: bottom right;
+    animation: chatAppScaleIn 0.3s forwards;
+}
+
+/* Chat container when active (fullscreen mode) */
+.chatApp-container.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(249, 249, 249, 0.95);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.chatApp-panel {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+/* Card style for fullscreen mode */
+.chatApp-container.active .chatApp-panel {
+    height: auto;
+    max-height: 90vh;
+    width: 100%;
+    max-width: 550px;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+    overflow: hidden;
+    background-color: white;
+}
+
+/* Chat header */
+.chatApp-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    background-color: #000;
+    color: white;
+}
+
+.chatApp-header h3 {
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: -0.3px;
+}
+
+.chatApp-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#chatApp-userInfoDisplay {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.chatApp-close-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chatApp-close-button:hover {
+    opacity: 1;
+}
+
+/* Chat messages */
+.chatApp-messages {
+    padding: 24px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-height: 40vh;
+    background-color: #fff;
+}
+
+.chatApp-message {
+    max-width: 85%;
+    padding: 14px 18px;
+    border-radius: 14px;
+    word-wrap: break-word;
+    line-height: 1.5;
+    position: relative;
+    font-size: 15px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.chatApp-bot-message {
+    background-color: #f0f0f0;
+    border-top-left-radius: 4px;
+    align-self: flex-start;
+}
+
+.chatApp-user-message {
+    background-color: #000;
+    color: white;
+    border-top-right-radius: 4px;
+    align-self: flex-end;
+}
+
+/* Chat interaction area */
+.chatApp-interaction {
+    padding: 24px;
+    border-top: 1px solid #f0f0f0;
+    background-color: #fff;
+}
+
+.chatApp-question {
+    margin-bottom: 16px;
+    font-weight: 500;
+    font-size: 15px;
+    color: #333;
+}
+
+/* Options for answers - Scrollable */
+.chatApp-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 280px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+/* Custom scrollbar for options */
+.chatApp-options::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chatApp-options::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.chatApp-options::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+}
+
+.chatApp-options::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+.chatApp-option-button {
+    padding: 14px;
+    background-color: white;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    text-align: left;
+    color: #333;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.chatApp-option-button:hover {
+    background-color: #f9f9f9;
+    border-color: #ddd;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+}
+
+/* Date picker styles */
+.chatApp-date-input {
+    padding: 15px;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    font-size: 15px;
+    width: 100%;
+    outline: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.chatApp-date-input:focus {
+    border-color: #000;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+}
+
+/* Text input styles */
+.chatApp-text-input {
+    padding: 15px;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    font-size: 15px;
+    width: 100%;
+    outline: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    font-family: inherit;
+}
+
+.chatApp-text-input:focus {
+    border-color: #000;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+}
+
+textarea.chatApp-text-input {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Submit button for text/date inputs */
+.chatApp-submit-button {
+    padding: 14px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    margin-top: 12px;
+    width: 100%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.chatApp-submit-button:hover {
+    background-color: #222;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+}
+
+/* Skip button */
+.chatApp-skip-button {
+    padding: 12px;
+    background-color: transparent;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 10px;
+    width: 100%;
+    color: #777;
+}
+
+.chatApp-skip-button:hover {
+    background-color: #f9f9f9;
+    color: #555;
+}
+
+/* Answer summary */
+.chatApp-answer-summary {
+    padding: 24px;
+    border-top: 1px solid #f0f0f0;
+    background-color: #fff;
+}
+
+.chatApp-answer-summary h4 {
+    font-weight: 600;
+    margin-bottom: 14px;
+    font-size: 16px;
+    color: #222;
+}
+
+.chatApp-summary-content {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 18px;
+    font-size: 15px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.chatApp-summary-content p {
+    margin-bottom: 8px;
+}
+
+.chatApp-summary-content strong {
+    font-weight: 600;
+    color: #222;
+}
+
+.chatApp-summary-actions {
+    display: flex;
+    gap: 12px;
+}
+
+/* Action buttons */
+.chatApp-primary-button, .chatApp-secondary-button {
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+    flex: 1;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.chatApp-primary-button {
+    background-color: #000;
+    color: white;
+}
+
+.chatApp-primary-button:hover {
+    background-color: #222;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+}
+
+.chatApp-secondary-button {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.chatApp-secondary-button:hover {
+    background-color: #e6e6e6;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.chatApp-text-button {
+    background: none;
+    border: none;
+    color: #000;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.2s;
+}
+
+.chatApp-text-button:hover {
+    color: #555;
+}
+
+/* Search results */
+.chatApp-search-results {
+    flex: 1;
+    padding: 24px;
+    border-top: 1px solid #f0f0f0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.chatApp-results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.chatApp-results-header h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #222;
+}
+
+.chatApp-results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.chatApp-result-item {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.chatApp-result-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.chatApp-result-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.chatApp-result-header h4 {
+    font-weight: 600;
+    font-size: 16px;
+    color: #222;
+}
+
+.chatApp-result-timestamp {
+    font-size: 13px;
+    color: #888;
+}
+
+.chatApp-result-details {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+}
+
+.chatApp-result-details p {
+    margin: 0;
+    color: #555;
+}
+
+.chatApp-result-details strong {
+    color: #333;
+    font-weight: 500;
+}
+.chatApp-results-count {
+    background-color: #000;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+/* Animations */
+@keyframes chatAppScaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes chatAppFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.chatApp-fade-in {
+    animation: chatAppFadeIn 0.3s forwards;
+}
+
+/* Missing options note */
+.chatApp-missing-note {
+    font-size: 13px;
+    color: #777;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+/* In your styles.css file, add: */
+.chatApp-no-results, .realmChat-no-results {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+.chatApp-typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 15px;
+    background: #f0f0f0;
+    border-radius: 12px;
+    width: fit-content;
+    margin-top: 5px;
+}
+
+.chatApp-typing-dot {
+    width: 8px;
+    height: 8px;
+    background: #888;
+    border-radius: 50%;
+    animation: typingPulse 1.4s infinite ease-in-out;
+}
+
+.chatApp-typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.chatApp-typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typingPulse {
+    0%, 100% { opacity: 0.4; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1); }
+}

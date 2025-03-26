@@ -68,13 +68,13 @@ class KnowledgeBase:
             
         instruction_components = self.get_instruction_components(components)
         
-        # Start with header like your prompt
+     
         prompt = """
 # IMPORTANT: Your output must be strict JSON.
 Do not include any additional text, commentary, or explanations.
 """
 
-        # Add schema section as shown in your prompt
+        # Add schema section 
         if "schemas" in instruction_components:
             prompt += "\n## JSON Output Format Example:\n"
             schema_json = json.dumps(instruction_components["schemas"].get("schema", {}), indent=4)

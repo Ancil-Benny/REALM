@@ -121,7 +121,7 @@ class OutputManager:
         except Exception as e:
             self.log_error(f"Error updating analysis file", e)
         
-        # Then, save to MongoDB if available
+        # Then, save to MongoDB using the improved flattened structure
         db_saved = False
         if DB_AVAILABLE:
             try:

@@ -1,10 +1,10 @@
 import os
 import json
 
-# Create the knowledge base directory if it doesn't exist
+# Create the knowledge base directory
 kb_dir = "knowledge_base"
 if os.path.exists(kb_dir):
-    # Delete existing files to avoid mixed content
+
     for file in os.listdir(kb_dir):
         if file.endswith('.json'):
             os.remove(os.path.join(kb_dir, file))
@@ -16,7 +16,7 @@ general = {
     "description": "Analyze only bounded objects and persons in image, exclude all other and associate them with detected persons if it belongs to persons."
 }
 
-# Create instructions.json with detailed sections (updated with new prompt)
+# Create instructions.json with detailed sections 
 instructions = {
     "Input Context": "- Use only the provided bounding boxes and labels for analysis. Do not infer, assume, or estimate details that are not explicitly visible.\n- The person's name must be extracted from the bounding box label. If the person is labeled \"unknown\" or is unrecognized, use \"unknown\".",
     
@@ -29,7 +29,7 @@ instructions = {
     "Constraints & Additional Rules": "- Do not include clothing in the object list.\n- Strictly adhere to JSON format—no extra text, summaries, or explanations.\n- Only analyze objects that have a bounding box and a label in the image.\n- If multiple people and objects are detected, each person should be listed separately with their associated objects."
 }
 
-# Create schemas.json - with exact structure from your prompt
+# Create schemas.json - with exact structure from prompt
 schemas = {
     "schema": [
         {
@@ -49,7 +49,7 @@ schemas = {
     ]
 }
 
-# Create examples.json with the three examples from your prompt
+# Create examples.json 
 examples = {
     "examples": [
         # Example 1

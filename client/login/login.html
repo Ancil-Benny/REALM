@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="login.css">
+  
+</head>
+<body> 
+    <div class="cursor cursor--small"></div>
+
+<!----------------------------------------------------------------------->
+<nav>
+    <div id="time-date" class="time-date"></div>
+</nav>
+<!----------------------------------------------------------------------->
+<div class="lgtxtcontainer">
+    <h1 class="lgtxt">Let's Create</h1>
+    <div class="linebreak"></div>
+    <h1 class="lgtxt" id="second">Your Account  <div class="loader" ></div>
+    <p class="lgtxtp1"> 
+        Input the necessary fields and upload ID for students</p>
+    </h1>
+    <div class="linebreak"></div>
+    <p class="bottomtext">Select your designation to create or login to your account.</p>
+     
+</div>
+<!----------------------------------------------------------------------->
+<div class="stdcontainer">
+    <div class="form-box login">
+        <form id="myForm">
+            <div class="input-box">
+                <h2>Student Sign In</h2>
+                <div class="field">
+                    <span class="icon"><i class='bx bxs-envelope'></i></span>
+                    <input type="email" id="login-email" oninput="debouncedFillQuarters()" autocomplete="off" required>
+                    <label>Email</label>
+                </div>
+                <div class="field">
+                    <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                    <input type="password" id="login-password" oninput="debouncedFillQuarters()" autocomplete="off" required>
+                    <label>Password</label>
+                </div>
+                <div id="login-message" class="message-box"></div>
+            </div>
+            <div class="button-container">
+                <button type="button" id="login-btn">Login</button>
+                <div class="create-account">
+                    <p>Create A New Account? 
+                        <a href="#" class="register-link">Sign Up</a>
+                    </p>
+                </div>
+            </div>
+        </form>
+        <svg id="circleSVG" class="myCircle" height="100" width="100">
+            <circle cx="50" cy="50" r="1" stroke="#000" stroke-width="3" fill="#112" />
+            <path id="circle" fill="none" stroke="black" stroke-width="3" />
+        </svg>
+    </div>
+
+
+<!------------------------------------------------------------------------>
+<div class="form-box stdsu" style="display: none;">
+    <form id="signUpForm">
+        <h2>Student Sign Up</h2>
+        <div class="row">
+            <div class="field">
+                <span class="icon"><i class='bx bxs-id-card'></i></span>
+                <input type="text" id="signup-ktuid" autocomplete="off" required oninput="debouncedFillQuartersSignUp()">
+                <label>Ktu Id</label>
+            </div>
+            <div class="field">
+                <span class="icon"><i class='bx bxs-user'></i></span>
+                <input type="text" id="signup-username" autocomplete="off" required oninput="debouncedFillQuartersSignUp()">
+                <label>UserName</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="field">
+                <span class="icon"><i class='bx bxs-user-circle'></i></span>
+                <input type="text" id="signup-dept" autocomplete="off" required oninput="debouncedFillQuartersSignUp()">
+                <label>Department</label>
+            </div>
+            <div class="field">
+                <span class="icon"><i class='bx bxs-envelope'></i></span>
+                <input type="email" id="signup-email" autocomplete="off" required oninput="debouncedFillQuartersSignUp()">
+                <label>Email</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="field">
+                <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                <input type="password" id="signup-password" autocomplete="off" required oninput="debouncedFillQuartersSignUp()">
+                <label>Password</label>
+            </div>
+            <div class="field">
+                <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                <input type="password" id="signup-confirm-password" autocomplete="off" required oninput="debouncedFillQuartersSignUp()">
+                <label>Confirm Password</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="field">
+                <span class="icon"><i class='bx bxs-camera'></i></span>
+                <input type="hidden" id="signup-image" required>
+                <button type="button" id="camera-button">Take Image</button>
+                <div id="camera-container">
+                    <div class="camera-header">
+                        <span>Face Detection</span>
+                        <button type="button" id="close-camera" class="close-btn">×</button>
+                    </div>
+                    <div class="camera-content">
+                        <video id="camera-view" autoplay playsinline></video>
+                        <!-- <canvas id="face-detection-overlay" class="detection-overlay"></canvas> -->
+                        <canvas id="camera-canvas" style="display:none;"></canvas>
+                        <div id="camera-guidance">Position your face in the center</div>
+                    </div>
+                    <div id="camera-controls">
+                        <button type="button" id="capture-button" disabled>Capture</button>
+                        <button type="button" id="confirm-button" style="display:none;">Confirm</button>
+                        <button type="button" id="retake-button" style="display:none;">Retake</button>
+
+                    </div>
+                </div>
+                <div id="preview-container" style="display:none;">
+                    <img id="captured-image" src="" alt="Captured image">
+                    <div id="id-preview"></div>
+                    <p id="image-status">No image captured</p>
+                </div>
+            </div>
+            <div class="create-account">
+                <p>Already have an account? 
+                    <a href="#" class="login-link">Sign In</a>
+                </p>
+            </div>
+        </div>
+        <div id="signup-message" class="message-box"></div>
+        <button type="button" id="signup-btn">Sign Up</button>
+    </form>
+    <svg id="circleSVGSignUp" class="myCircle" height="100" width="100">
+        <circle cx="50" cy="50" r="1" stroke="#000" stroke-width="3" fill="#112" />
+        <path id="circleSignUp" fill="none" stroke="black" stroke-width="3" />
+    </svg>
+</div>
+<!------------------------------------stdcon div 1------------------------------------->
+</div>
+
+<!----------------------------------------------------------------------->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="login-ui.js"></script>
+<script src="login-camera.js"></script>
+<script src="login-api.js"></script> 
+</body>
+</html>

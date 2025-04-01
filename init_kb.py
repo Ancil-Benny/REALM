@@ -18,13 +18,13 @@ general = {
 
 # Create instructions.json with detailed sections 
 instructions = {
-    "Input Context": "- Use only the provided bounding boxes and labels for analysis. Do not infer, assume, or estimate details that are not explicitly visible.\n- The person's name must be extracted from the bounding box label. If the person is labeled \"unknown\" or is unrecognized, use \"unknown\".",
+    "Input Context": "- Use only the provided bounding boxes and labels for analysis. Do not infer, assume, or estimate details that are not explicitly visible.\n- The person's name must be extracted from the bounding box label which will be a ID like CEK21CS... If the person is labeled \"unknown\" or is unrecognized, use \"unknown\".",
     
     "Object Association Rules": "- An object belongs to a person if it is carried, held, worn (except clothing), or positioned clearly with them.\n- If an object is not clearly associated with any identified person, it should be assigned to \"unknown\".",
     
     "Object Detection Criteria": "- Identify and categorize objects only within the following predefined categories:\n  - Electronics (cell phone, laptop, keyboard, remote, mouse)\n  - Accessories (handbag, umbrella, backpack, suitcase, tie)\n  - Sports Equipment (tennis racket, sports ball)\n  - Stationery (book, scissors)\n  - miscellaneous (water bottle, cup, bowl)\n- Ignore any object outside these categories.",
     
-    "Object Analysis & Description": "For each detected object, extract and report the following properties:\n1. Name (e.g., laptop, backpack, water bottle)\n2. Color (if distinguishable)\n3. Category (Electronics, Accessories, Sports, Stationery, other.)\n4. Brand (if a recognizable brand label is visible)\n5. Extra Description (only visible distinguishing features such as):\n   - Scratches, dents, stickers, labels, engravings, custom markings, unique patterns, or other identifiable features.\n   - Do not assume dimensions (e.g., weight, size) unless a label explicitly states them.",
+    "Object Analysis & Description": "For each detected object, extract and report the following properties:\n1. Name (e.g., laptop, backpack, water bottle)\n2. Color (if distinguishable, use standard colors -  Black, White, Gray, Red, Blue, Green, Yellow, Gold, Multicolor or No Color )\n3. Category (Electronics, Accessories, Sports, Stationery, other.)\n4. Brand (if a recognizable brand label is visible)\n5. Extra Description (only visible distinguishing features such as):\n   - Scratches, dents, stickers, labels, engravings, custom markings, unique patterns, or other identifiable features.\n   - Do not assume dimensions (e.g., weight, size) unless a label explicitly states them.",
     
     "Constraints & Additional Rules": "- Do not include clothing in the object list.\n- Strictly adhere to JSON format—no extra text, summaries, or explanations.\n- Only analyze objects that have a bounding box and a label in the image.\n- If multiple people and objects are detected, each person should be listed separately with their associated objects."
 }
@@ -55,7 +55,7 @@ examples = {
         # Example 1
         [
             {
-                "person": "John Doe",
+                "person": "CEK21CS047",
                 "objects": [
                     {
                         "name": "laptop",
@@ -95,7 +95,7 @@ examples = {
         # Example 2
         [
             {
-                "person": "Alice Smith",
+                "person": "CEK21CS014",
                 "objects": [
                     {
                         "name": "cell phone",
@@ -135,7 +135,7 @@ examples = {
         # Example 3
         [
             {
-                "person": "Michael Brown",
+                "person": "CEK21CS025",
                 "objects": [
                     {
                         "name": "laptop",

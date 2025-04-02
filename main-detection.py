@@ -2,7 +2,6 @@ import cv2
 import os
 import torch
 import numpy as np
-import argparse
 from ultralytics import YOLO
 from facenet_pytorch import MTCNN, InceptionResnetV1
 from PIL import Image
@@ -26,29 +25,6 @@ import random
 import sys
 
 warnings.filterwarnings('ignore', category=RuntimeWarning)
-
-def parse_arguments():
-    parser = argparse.ArgumentParser(description='REALM Vision Detection System')
-    parser.add_argument('--mode', '-m', type=str, choices=['realtime', 'video'], default='realtime',
-                       help='Detection mode: "realtime" for webcam or "video" for pre-recorded video')
-    parser.add_argument('--video', '-v', type=str, 
-                       help='Path to video file (required if mode is "video")')
-    parser.add_argument('--no-display', action='store_true', default=False,
-                       help='Run in headless mode without showing any windows')
-    
-    args = parser.parse_args()
-    
-    # Validate arguments
-    if args.mode == 'video' and not args.video:
-        parser.error('--video argument is required when mode is "video"')
-    
-    if args.mode == 'video' and not os.path.exists(args.video):
-        parser.error(f'Video file does not exist: {args.video}')
-    
-    return args
-
-# Create processed videos directory 
-os.makedirs("results/processed_videos", exist_ok=True)
 
 # Main code begins
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
@@ -149,46 +125,83 @@ output_manager.log_system("Loading YOLO model")
 model = YOLO("yolo_models/yolo11n.pt")
 model.model.to(device)
 
-# Global variables for tracking
+# Setup webcam capture
+output_manager.log_system("Initializing webcam")
+cap = cv2.VideoCapture(0)
+if not cap.isOpened():
+    output_manager.log_error("Could not open webcam", None)
+    print("Error: Could not open webcam.")
+    exit(1)
+
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+
+# Setup display window
+window_name = "REALM"
+cv2.namedWindow(window_name)
+cv2.resizeWindow(window_name, 800, 600)
+
+# Classes to detect 
+classes_to_detect = [0, 24, 25, 26, 32, 34, 39, 41, 45, 63, 64, 65, 66, 67, 73, 76]
+
+# Tracking variables
+FORGET_FRAMES = 30
 frame_count = 0
 snapshot_count = 0
 snapshot_tracker = {}  # Track objects we've already seen
-FORGET_FRAMES = 45  # Increased for better tracking stability
+
+output_manager.log_system("System ready - press 'q' to quit")
+print("Press 'q' to quit.")
+
+# Add these variables after your other initialization code
 analysis_queue = queue.Queue()
 analysis_in_progress = False
 analysis_results = {}
 MAX_ANALYSIS_QUEUE = 10  # Maximum number of pending analyses
 last_analysis_time = 0
-MIN_ANALYSIS_INTERVAL = 5.0  # Minimum seconds between analyses
+MIN_ANALYSIS_INTERVAL = 3.0  # Minimum seconds between analyses
 
+# separate thread for image analysis
 def analysis_worker():
     """Worker thread that handles image analysis without file handle conflicts"""
+    
     while True:
         try:
+            # Get the next analysis task from the queue
             task = analysis_queue.get()
-            if task is None:
+            if task is None:  # Signal to exit
                 break
                 
             snapshot_id, image_path, timestamp = task
             
+            # Log the start of analysis
             print(f"Starting analysis for snapshot {snapshot_id} from {image_path}")
             output_manager.log_system(f"Starting analysis for snapshot {snapshot_id}")
             
             try:
+                
+                # Try different methods to load the image until one works
                 img_data = None
                 
+                # Method 1: Use OpenCV to read image directly into memory
                 try:
+                    # Sleep before trying to read the file to ensure it's fully written
                     time.sleep(1.5)
+                    
+                    # Read image with OpenCV
                     img = cv2.imread(image_path)
                     if img is not None and img.size > 0:
+                        # Convert to memory buffer
                         success, buffer = cv2.imencode(".jpg", img)
                         if success:
                             img_data = buffer.tobytes()
                 except Exception as e:
                     print(f"OpenCV image loading failed: {e}")
                 
+                # Method 2: Try PIL if OpenCV failed
                 if img_data is None:
                     try:
+                        # Add extra delay before trying again
                         time.sleep(0.5)
                         pil_img = PILImage.open(image_path)
                         img_byte_arr = io.BytesIO()
@@ -197,23 +210,30 @@ def analysis_worker():
                     except Exception as e:
                         print(f"PIL image loading failed: {e}")
                 
+                # Method 3: Last resort - read file as binary
                 if img_data is None:
                     try:
+                        # Even more delay
                         time.sleep(1.0)
                         with open(image_path, 'rb') as f:
                             img_data = f.read()
                     except Exception as e:
                         print(f"Binary image loading failed: {e}")
                 
+                # If all methods failed, we can't proceed
                 if img_data is None or len(img_data) == 0:
                     raise ValueError(f"Could not load image data from {image_path} using any method")
                 
+                # Instead of writing to disk, encode the image directly to base64
                 base64_image = base64.b64encode(img_data).decode('utf-8')
                 
+                
+                # Get prompt from knowledge base
                 from knowledge_base import KnowledgeBase
                 kb = KnowledgeBase()
-                prompt = kb.build_prompt(None)
+                prompt = kb.build_prompt(None)  # Use default prompt
                 
+                # Save debug prompt if needed
                 try:
                     debug_prompt_path = os.path.join(output_manager.dirs["logs"], f"prompt_{snapshot_id}.txt")
                     with open(debug_prompt_path, 'w') as f:
@@ -221,10 +241,11 @@ def analysis_worker():
                 except Exception as e:
                     print(f"Warning: Could not save debug prompt: {e}")
                 
+                # Make API call directly without additional file operations
                 from mistralai import Mistral
                 client = Mistral(api_key=os.getenv("MISTRAL_API_KEY"))
                 
-                print(f"Sending image to API (base64 length: {len(base64_image)})")
+                print(f"Sending image to  API (base64 length: {len(base64_image)})")
                 start_time = datetime.datetime.now()
                 
                 try:
@@ -245,14 +266,19 @@ def analysis_worker():
                     end_time = datetime.datetime.now()
                     response_time_ms = (end_time - start_time).total_seconds() * 1000
                     
+                    # Get response content
                     content = response.choices[0].message.content
                     
+                    # Parse the JSON content
                     analysis_result = json.loads(content)
                     
+                    # Create formatted output
                     formatted_output = json.dumps(analysis_result, indent=4)
                     
                     print(f"✓ Analysis successful! Response received in {response_time_ms:.0f}ms")
                     
+                    # save the analysis results to a file
+                    # unique filename with random component to avoid conflicts
                     unique_id = random.randint(10000, 99999)
                     timestamp_str = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
                     output_file = os.path.join(
@@ -260,14 +286,19 @@ def analysis_worker():
                         f"analysis_{snapshot_id:03d}_{timestamp_str}_{unique_id}.json"
                     )
                     
+                    # Write the output to file with error handling
                     try:
+                        # Create the directory if it doesn't exist
                         os.makedirs(os.path.dirname(output_file), exist_ok=True)
                         
+                        # Write to a temporary file first, then rename
                         temp_file = f"{output_file}.tmp"
                         with open(temp_file, 'w') as f:
                             f.write(formatted_output)
                         
+                        # Ensure temp file was written successfully
                         if os.path.exists(temp_file) and os.path.getsize(temp_file) > 0:
+                            # Rename to final destination
                             if os.path.exists(output_file):
                                 os.remove(output_file)
                             os.rename(temp_file, output_file)
@@ -277,11 +308,13 @@ def analysis_worker():
                             
                     except Exception as file_err:
                         print(f"Warning: Could not save analysis to {output_file}: {file_err}")
+                        # Try a fallback location in current directory
                         fallback_file = f"emergency_analysis_{snapshot_id}_{timestamp_str}.json"
                         print(f"Trying fallback location: {fallback_file}")
                         with open(fallback_file, 'w') as f:
                             f.write(formatted_output)
                     
+                    # Add the analysis result to the consolidated file with error handling
                     try:
                         output_manager.append_analysis(
                             snapshot_id=snapshot_id,
@@ -292,6 +325,7 @@ def analysis_worker():
                     except Exception as append_err:
                         print(f"Warning: Failed to append analysis to consolidated file: {append_err}")
                     
+                    # Save analysis results to CSV with error handling
                     try:
                         from analysis_utils import save_analysis_results
                         save_analysis_results(analysis_result, known_person_ids)
@@ -299,6 +333,7 @@ def analysis_worker():
                     except Exception as csv_err:
                         print(f"Warning: Failed to save analysis to CSV: {csv_err}")
                     
+                    # Log completion
                     output_manager.log_system(f"Analysis complete for snapshot {snapshot_id}")
                     print(f"✓ Analysis complete for snapshot {snapshot_id}")
                     
@@ -313,388 +348,222 @@ def analysis_worker():
                 output_manager.log_error(f"Error processing image for snapshot {snapshot_id}", process_err)
                 
             finally:
+                # Ensure we always mark the task as done
                 analysis_queue.task_done()
                 
         except Exception as worker_err:
             print(f"Critical error in analysis worker: {worker_err}")
             traceback.print_exc()
+            # Sleep a bit before handling the next task
             time.sleep(1.0)
             
-            if 'task' in locals() and task is not None:
-                try:
-                    if not hasattr(task, '_task_done'):
-                        analysis_queue.task_done()
-                        task._task_done = True
-                except ValueError:
-                    pass
+        # Always handle the queue task even if an exception occurred
+        if 'task' in locals() and task is not None:
+            try:
+                analysis_queue.task_done()
+            except ValueError:
+                # Task might have already been marked as done
+                pass
 
-def process_detection_source(source_type, args):
-    global frame_count, snapshot_count, snapshot_tracker, last_analysis_time
-    
-    # Add video mode specific variables
-    last_snapshot_frame = 0
-    FRAME_INTERVAL = 0  # Will be set based on video properties
-    
-    if source_type == 'realtime':
-        output_manager.log_system("Initializing webcam")
-        cap = cv2.VideoCapture(0)
-        if not cap.isOpened():
-            output_manager.log_error("Could not open webcam", None)
-            print("Error: Could not open webcam.")
-            return
-            
-        cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
-        cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
-        
-        output_video = None
-        total_frames = float('inf')
-        
-    elif source_type == 'video':
-        video_path = args.video
-        output_manager.log_system(f"Opening video file: {video_path}")
-        cap = cv2.VideoCapture(video_path)
-        if not cap.isOpened():
-            output_manager.log_error(f"Could not open video file: {video_path}", None)
-            print(f"Error: Could not open video file: {video_path}")
-            return
-            
-        fps = cap.get(cv2.CAP_PROP_FPS)
-        width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
-        height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-        total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-        
-        # Calculate frame interval based on video properties - at least 90 frames between snapshots,
-        # or roughly 3 seconds at 30fps
-        FRAME_INTERVAL = max(90, int(fps * 3))
-        output_manager.log_system(f"Video properties: {width}x{height}, {fps} fps, {total_frames} frames")
-        output_manager.log_system(f"Frame interval for snapshot triggering: {FRAME_INTERVAL} frames")
-        
-        video_name = os.path.basename(video_path)
-        base_name, ext = os.path.splitext(video_name)
-        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-        output_filename = f"{base_name}_processed_{timestamp}.mp4"
-        output_path = os.path.join("results", "processed_videos", output_filename)
-        
-        fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-        output_video = cv2.VideoWriter(output_path, fourcc, fps, (width, height))
-        output_manager.log_system(f"Output video will be saved to: {output_path}")
-    
-    # Rest of the initialization code remains the same
-    if not args.no_display:
-        window_name = "REALM"
-        cv2.namedWindow(window_name)
-        cv2.resizeWindow(window_name, 800, 600)
-    
-    classes_to_detect = [0, 24, 25, 26, 32, 34, 39, 41, 45, 63, 64, 65, 66, 67, 73, 76]
-    
-    progress_interval = max(1, total_frames // 100)
-    
-    frame_count = 0
-    start_time = time.time()
-    
-    # Add object frame counting for stability
-    object_frame_counter = {}  # Track how many frames each object has been seen
-    MIN_DETECTION_FRAMES = 3  # Only consider objects seen for at least this many frames
-    
-    output_manager.log_system(f"Starting detection using source: {source_type}")
-    print(f"Starting detection. Press 'q' to quit.")
-    
-    while cap.isOpened():
-        ret, frame = cap.read()
-        if not ret:
-            if source_type == 'video':
-                output_manager.log_system("Reached end of video file")
-                print("End of video reached.")
-            else:
-                output_manager.log_warning("Failed to grab frame from camera")
-                print("Failed to grab frame from camera.")
-            break
-        
-        frame_count += 1
-        
-        # Show progress for video mode
-        if source_type == 'video' and frame_count % progress_interval == 0:
-            progress = (frame_count / total_frames) * 100
-            elapsed = time.time() - start_time
-            estimated_total = elapsed / (frame_count / total_frames) if frame_count > 0 else 0
-            remaining = max(0, estimated_total - elapsed)
-            
-            progress_str = f"Progress: {progress:.1f}% ({frame_count}/{total_frames}) | "
-            time_str = f"Remaining: {int(remaining//60)}m {int(remaining%60)}s"
-            
-            if args.no_display:
-                progress_bar = '█' * int(progress // 2) + '▒' * (50 - int(progress // 2))
-                print(f"\r[{progress_bar}] {progress_str}{time_str}", end="")
-            else:
-                print(f"{progress_str}{time_str}")
-        
-        results = model.track(
-            frame,
-            persist=True,
-            classes=classes_to_detect,
-            conf=0.45,
-            iou=0.3,
-            tracker="bytetrack.yaml",
-            verbose=False
-        )
-        
-        live_frame = frame.copy()
-        snapshot_frame = None
-        
-        if not results or len(results) == 0:
-            snapshot_tracker = {tid: last_seen for tid, last_seen in snapshot_tracker.items()
-                                if frame_count - last_seen < FORGET_FRAMES}
-            
-            # Also clean up the object frame counter
-            object_frame_counter = {tid: count for tid, count in object_frame_counter.items()
-                                   if tid in snapshot_tracker}
-            
-            if source_type == 'video' and output_video is not None:
-                timestamp_str = f"Frame: {frame_count}/{total_frames}"
-                cv2.putText(live_frame, timestamp_str, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 
-                            0.7, (255, 255, 255), 2, cv2.LINE_AA)
-                output_video.write(live_frame)
-                
-            if not args.no_display:
-                cv2.imshow(window_name, live_frame)
-                if cv2.waitKey(1) & 0xFF == ord("q"):
-                    break
-            continue
-        
-        result = results[0]
-        
-        if (not hasattr(result.boxes, 'id') or result.boxes.id is None or len(result.boxes.id) == 0 
-            or result.boxes.xyxy is None):
-            snapshot_tracker = {tid: last_seen for tid, last_seen in snapshot_tracker.items()
-                                if frame_count - last_seen < FORGET_FRAMES}
-            
-            # Also clean up the object frame counter
-            object_frame_counter = {tid: count for tid, count in object_frame_counter.items()
-                                   if tid in snapshot_tracker}
-            
-            if source_type == 'video' and output_video is not None:
-                timestamp_str = f"Frame: {frame_count}/{total_frames}"
-                cv2.putText(live_frame, timestamp_str, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 
-                            0.7, (255, 255, 255), 2, cv2.LINE_AA)
-                output_video.write(live_frame)
-                
-            if not args.no_display:
-                cv2.imshow(window_name, live_frame)
-                if cv2.waitKey(1) & 0xFF == ord("q"):
-                    break
-            continue
-        
-        track_ids = result.boxes.id.cpu().numpy() if hasattr(result.boxes, 'id') else np.array([])
-        boxes = result.boxes.xyxy.cpu().numpy() 
-        confidences = result.boxes.conf.cpu().numpy() if result.boxes.conf is not None else np.array([])
-        class_ids = result.boxes.cls.cpu().numpy() if hasattr(result.boxes, 'cls') else np.array([])
-        
-        labels = []
-        for cls in class_ids:
-            label = model.names[int(cls)] if hasattr(model, "names") and int(cls) in model.names else f"Class:{int(cls)}"
-            labels.append(label)
-        
-        new_snapshot = False
-        snapshot_ids = []
-        trigger_classes = []
-        
-        # Update object frame counter for all objects
-        for i, tid in enumerate(track_ids):
-            tid_int = int(tid)
-            
-            # Update frame counter for this object
-            if tid_int not in object_frame_counter:
-                object_frame_counter[tid_int] = 1
-            else:
-                object_frame_counter[tid_int] += 1
-            
-            # Update last seen frame
-            snapshot_tracker[tid_int] = frame_count
-        
-        # Check for stable new objects that should trigger snapshots
-        for i, tid in enumerate(track_ids):
-            tid_int = int(tid)
-            class_id = int(class_ids[i])
-            
-            # Only consider stable objects that have been tracked for a minimum number of frames
-            is_stable = object_frame_counter[tid_int] >= MIN_DETECTION_FRAMES
-            
-            if tid_int not in snapshot_tracker or (frame_count - snapshot_tracker[tid_int] > FORGET_FRAMES):
-                # It's a new object (or one we haven't seen for a while)
-                if class_id != 0 and is_stable:  # Not a person and it's stable
-                    # Check if we've waited long enough since the last snapshot (video mode only)
-                    if source_type != 'video' or (frame_count - last_snapshot_frame) >= FRAME_INTERVAL:
-                        new_snapshot = True
-                        snapshot_ids.append(tid_int)
-                        trigger_classes.append(class_id)
-                        print(f"New stable object ID {tid_int} (class {class_id}: {labels[i]}) will trigger snapshot")
-                        
-                        # Update last snapshot frame for video mode
-                        if source_type == 'video':
-                            last_snapshot_frame = frame_count
-        
-        # Clean up old entries in tracking dictionaries
+# Start the worker thread
+analysis_thread = threading.Thread(target=analysis_worker, daemon=True)
+analysis_thread.start()
+
+while cap.isOpened():
+    ret, frame = cap.read()
+    if not ret:
+        output_manager.log_warning("Failed to grab frame.")
+        print("Failed to grab frame.")
+        break
+
+    frame_count += 1
+
+    results = model.track(
+        frame,
+        persist=True,
+        classes=classes_to_detect,
+        conf=0.7,
+        iou=0.5,
+        tracker="bytetrack.yaml",
+        verbose=False
+    )
+
+    live_frame = frame.copy()
+    snapshot_frame = frame.copy()
+
+    if not results or len(results) == 0:
         snapshot_tracker = {tid: last_seen for tid, last_seen in snapshot_tracker.items()
                             if frame_count - last_seen < FORGET_FRAMES}
+        cv2.imshow(window_name, live_frame)
+        if cv2.waitKey(1) & 0xFF == ord("q"):
+            break
+        continue
+
+    result = results[0]
+
+    if (not hasattr(result.boxes, 'id') or result.boxes.id is None or len(result.boxes.id) == 0 
+        or result.boxes.xyxy is None):
+        snapshot_tracker = {tid: last_seen for tid, last_seen in snapshot_tracker.items()
+                            if frame_count - last_seen < FORGET_FRAMES}
+        cv2.imshow(window_name, live_frame)
+        if cv2.waitKey(1) & 0xFF == ord("q"):
+            break
+        continue
+
+    track_ids = result.boxes.id.cpu().numpy() if hasattr(result.boxes, 'id') else np.array([])
+    boxes = result.boxes.xyxy.cpu().numpy() 
+    confidences = result.boxes.conf.cpu().numpy() if result.boxes.conf is not None else np.array([])
+    class_ids = result.boxes.cls.cpu().numpy() if hasattr(result.boxes, 'cls') else np.array([])
+
+    labels = []
+    for cls in class_ids:
+        label = model.names[int(cls)] if hasattr(model, "names") and int(cls) in model.names else f"Class:{int(cls)}"
+        labels.append(label)
+
+    new_snapshot = False
+    snapshot_ids = []  # Track which IDs triggered the new snapshot
+    trigger_classes = []  # Store class IDs that triggered the snapshot
+    
+    # Check for new objects - but only non-person objects trigger snapshots
+    for i, tid in enumerate(track_ids):
+        tid_int = int(tid)
+        class_id = int(class_ids[i])
         
-        object_frame_counter = {tid: count for tid, count in object_frame_counter.items()
-                               if tid in snapshot_tracker}
+        if tid_int not in snapshot_tracker:
+            # New object detected
+            if class_id != 0:  # If it's NOT a person (class 0)
+                new_snapshot = True
+                snapshot_ids.append(tid_int)
+                trigger_classes.append(class_id)
+                print(f"New object ID {tid_int} (class {class_id}: {labels[i]}) will trigger snapshot")
         
-        # Draw bounding boxes and labels
-        for i in range(len(boxes)):
-            x1, y1, x2, y2 = map(int, boxes[i])
-            tid_int = int(track_ids[i])
-            
-            # Add stability indicator to live text
-            stability = ""
-            if tid_int in object_frame_counter:
-                if object_frame_counter[tid_int] >= MIN_DETECTION_FRAMES:
-                    stability = "✓"  # Checkmark for stable objects
-                else:
-                    stability = "..."  # Dots for objects not yet stable
-            
-            live_text = f"{labels[i]} | ID: {tid_int} | {confidences[i]:.2f} {stability}"
-            cv2.rectangle(live_frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
-            (text_width, text_height), baseline = cv2.getTextSize(live_text, cv2.FONT_HERSHEY_SIMPLEX, 0.6, 2)
-            cv2.rectangle(live_frame, (x1, y1 - text_height - baseline), (x1 + text_width, y1), (0, 0, 0), -1)
-            cv2.putText(live_frame, live_text, (x1, y1 - baseline), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
+        # Update the last seen frame for this object (all objects including persons)
+        snapshot_tracker[tid_int] = frame_count
+
+    # Clean up old entries in the snapshot tracker
+    snapshot_tracker = {tid: last_seen for tid, last_seen in snapshot_tracker.items()
+                        if frame_count - last_seen < FORGET_FRAMES}
+
+    for i in range(len(boxes)):
+        x1, y1, x2, y2 = map(int, boxes[i])
+        # Construct live text with details for live camera feed
+        live_text = f"{labels[i]} | ID: {int(track_ids[i])} | Index: {int(class_ids[i])} | {confidences[i]:.2f}"
+        cv2.rectangle(live_frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
+        (text_width, text_height), baseline = cv2.getTextSize(live_text, cv2.FONT_HERSHEY_SIMPLEX, 0.6, 2)
+        cv2.rectangle(live_frame, (x1, y1 - text_height - baseline), (x1 + text_width, y1), (0, 0, 0), -1)
+        cv2.putText(live_frame, live_text, (x1, y1 - baseline), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
+
+        # For snapshot frame, only use the label or class name
+        if int(class_ids[i]) != 0:  # If it's not a person
+            cv2.rectangle(snapshot_frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
+            snapshot_text = labels[i]
+            (snap_text_width, snap_text_height), snap_baseline = cv2.getTextSize(snapshot_text, cv2.FONT_HERSHEY_SIMPLEX, 0.6, 2)
+            cv2.rectangle(snapshot_frame, (x1, y1 - snap_text_height - snap_baseline), (x1 + snap_text_width, y1), (0, 0, 0), -1)
+            cv2.putText(snapshot_frame, snapshot_text, (x1, y1 - snap_baseline), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
+
+    if new_snapshot:
+        # Run face recognition on the snapshot frame
+        snapshot_frame, recognized_faces = perform_face_recognition(snapshot_frame)
+        snapshot_count += 1
         
-        # Rest of your code for handling new snapshots remains the same...
-        if new_snapshot:
-            snapshot_frame = frame.copy()
-            
-            for i in range(len(boxes)):
-                if int(class_ids[i]) != 0:
-                    x1, y1, x2, y2 = map(int, boxes[i])
-                    cv2.rectangle(snapshot_frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
-                    snapshot_text = labels[i]
-                    (snap_text_width, snap_text_height), snap_baseline = cv2.getTextSize(
-                        snapshot_text, cv2.FONT_HERSHEY_SIMPLEX, 0.6, 2)
-                    cv2.rectangle(snapshot_frame, 
-                                 (x1, y1 - snap_text_height - snap_baseline), 
-                                 (x1 + snap_text_width, y1), (0, 0, 0), -1)
-                    cv2.putText(snapshot_frame, snapshot_text, (x1, y1 - snap_baseline), 
-                               cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
-            
-            snapshot_frame, recognized_faces = perform_face_recognition(snapshot_frame)
-            snapshot_count += 1
-            
-            timestamp_str = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-            random_suffix = random.randint(1000, 9999)
-            
-            source_prefix = "cam" if source_type == "realtime" else "vid"
-            snapshot_filename = f"{source_prefix}_snapshot_{snapshot_count:03d}_{timestamp_str}_{random_suffix}.jpg"
-            output_path = os.path.join(output_manager.dirs["images"], snapshot_filename)
-            
+        # Generate a unique filename for the snapshot
+        timestamp_str = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        random_suffix = random.randint(1000, 9999)
+        snapshot_filename = f"snapshot_{snapshot_count:03d}_{timestamp_str}_{random_suffix}.jpg"
+        output_path = os.path.join(output_manager.dirs["images"], snapshot_filename)
+        
+        # Save snapshot with error handling
+        try:
+            cv2.imwrite(output_path, snapshot_frame)
+        except Exception as save_err:
+            print(f"Error saving snapshot: {save_err}")
+            # Try to save to the current directory as a fallback
+            fallback_path = f"emergency_snapshot_{snapshot_count}.jpg"
             try:
-                cv2.imwrite(output_path, snapshot_frame)
-            except Exception as save_err:
-                print(f"Error saving snapshot: {save_err}")
-                fallback_path = f"emergency_snapshot_{snapshot_count}.jpg"
-                try:
-                    cv2.imwrite(fallback_path, snapshot_frame)
-                    output_path = fallback_path
-                    print(f"Snapshot saved to fallback location: {fallback_path}")
-                except Exception as fallback_err:
-                    print(f"Critical error: Could not save snapshot: {fallback_err}")
-            
-            trigger_details = []
-            for tid in snapshot_ids:
-                idx = np.where(track_ids == tid)[0]
-                if len(idx) > 0:
-                    i = idx[0]
-                    trigger_details.append(f"{int(tid)}({labels[i]})")
-                else:
-                    trigger_details.append(f"{int(tid)}(unknown)")
-            
-            trigger_info = ", ".join(trigger_details)
-            log_message = f"New snapshot {snapshot_count} triggered by object IDs: {trigger_info}"
-            output_manager.log_system(log_message)
-            
-            timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            metadata_entry = {
-                "snapshot_id": snapshot_count,
-                "timestamp": timestamp,
-                "image_path": output_path,
-                "source": source_type,
-                "source_details": args.video if source_type == "video" else "webcam",
-                "trigger_objects": [int(id) for id in snapshot_ids],
-                "people": [{"name": name, "box": box} for name, box in recognized_faces],
-                "objects": []
-            }
-            
-            for i in range(len(boxes)):
-                obj_data = {
-                    "id": int(track_ids[i]),
-                    "label": labels[i],
-                    "box": boxes[i].tolist(),
-                    "confidence": float(confidences[i]),
-                    "class_id": int(class_ids[i])
-                }
-                metadata_entry["objects"].append(obj_data)
-            
-            try:
-                output_manager.append_metadata(metadata_entry)
-            except Exception as meta_err:
-                print(f"Warning: Failed to save metadata: {meta_err}")
-            
-            current_time = time.time()
-            
-            # Adjusted throttling for video mode - longer interval
-            min_interval = MIN_ANALYSIS_INTERVAL
-            if source_type == 'video':
-                min_interval = 10.0  # Longer interval for video mode
-            
-            if (current_time - last_analysis_time >= min_interval and 
-                analysis_queue.qsize() < MAX_ANALYSIS_QUEUE):
-                
-                analysis_queue.put((snapshot_count, output_path, timestamp))
-                last_analysis_time = current_time
-                print(f"Queued snapshot {snapshot_count} for analysis. Queue size: {analysis_queue.qsize()}")
+                cv2.imwrite(fallback_path, snapshot_frame)
+                output_path = fallback_path
+                print(f"Snapshot saved to fallback location: {fallback_path}")
+            except Exception as fallback_err:
+                print(f"Critical error: Could not save snapshot: {fallback_err}")
+                # Continue even if we couldn't save the image
+        
+        # Prepare info about the triggering objects
+        trigger_details = []
+        for tid in snapshot_ids:
+            idx = np.where(track_ids == tid)[0]
+            if len(idx) > 0:
+                i = idx[0]
+                trigger_details.append(f"{int(tid)}({labels[i]})")
             else:
-                reason = "too soon after last analysis" if current_time - last_analysis_time < min_interval else "queue full"
-                print(f"Skipping analysis for snapshot {snapshot_count} (throttling: {reason})")
-                output_manager.log_system(f"Analysis skipped for snapshot {snapshot_count} due to throttling: {reason}")
+                trigger_details.append(f"{int(tid)}(unknown)")
         
-        # Continue with video output...
-        if source_type == 'video' and output_video is not None:
-            timestamp_str = f"Frame: {frame_count}/{total_frames}"
-            cv2.putText(live_frame, timestamp_str, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 
-                        0.7, (255, 255, 255), 2, cv2.LINE_AA)
-            output_video.write(live_frame)
+        trigger_info = ", ".join(trigger_details)
+        log_message = f"New snapshot {snapshot_count} triggered by object IDs: {trigger_info}"
+        output_manager.log_system(log_message)
+
+        # Create metadata entry
+        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        metadata_entry = {
+            "snapshot_id": snapshot_count,
+            "timestamp": timestamp,
+            "image_path": output_path,
+            "trigger_objects": [int(id) for id in snapshot_ids],
+            "people": [{"name": name, "box": box} for name, box in recognized_faces],
+            "objects": []
+        }
         
-        if not args.no_display:
-            cv2.imshow(window_name, live_frame)
-            if cv2.waitKey(1) & 0xFF == ord("q"):
-                output_manager.log_system("User requested exit (pressed 'q')")
-                break
+        # Add metadata about all detected objects
+        for i in range(len(boxes)):
+            obj_data = {
+                "id": int(track_ids[i]),
+                "label": labels[i],
+                "box": boxes[i].tolist(),
+                "confidence": float(confidences[i]),
+                "class_id": int(class_ids[i])
+            }
+            metadata_entry["objects"].append(obj_data)
+        
+        # Append metadata with error handling
+        try:
+            output_manager.append_metadata(metadata_entry)
+        except Exception as meta_err:
+            print(f"Warning: Failed to save metadata: {meta_err}")
+
+        # Check if we should queue this snapshot for analysis
+        current_time = time.time()
+        
+        # More aggressive throttling
+        MIN_ANALYSIS_INTERVAL = 5.0  #  5 seconds
+        
+        if (current_time - last_analysis_time >= MIN_ANALYSIS_INTERVAL and 
+            analysis_queue.qsize() < MAX_ANALYSIS_QUEUE):
+            
+            # Queue the snapshot for analysis
+            analysis_queue.put((snapshot_count, output_path, timestamp))
+            last_analysis_time = current_time
+            print(f"Queued snapshot {snapshot_count} for analysis. Queue size: {analysis_queue.qsize()}")
         else:
-            time.sleep(0.001)
-    
-    cap.release()
-    if output_video is not None:
-        output_video.release()
-        print(f"Processed video saved to: {output_path}")
-    
-    if not args.no_display:
-        cv2.destroyAllWindows()
-    
-    output_manager.log_system(f"Session ended. Processed {frame_count} frames, captured {snapshot_count} snapshots.")
+            reason = "too soon after last analysis" if current_time - last_analysis_time < MIN_ANALYSIS_INTERVAL else "queue full"
+            print(f"Skipping analysis for snapshot {snapshot_count} (throttling: {reason})")
+            output_manager.log_system(f"Analysis skipped for snapshot {snapshot_count} due to throttling: {reason}")
 
-def main():
-    args = parse_arguments()
-    
-    analysis_thread = threading.Thread(target=analysis_worker, daemon=True)
-    analysis_thread.start()
-    
-    process_detection_source(args.mode, args)
-    
-    time.sleep(0.5)
-    
-    analysis_queue.put(None)
-    analysis_thread.join(timeout=5.0)
-    
-    output_manager.close()
+    cv2.imshow(window_name, live_frame)
+    if cv2.waitKey(1) & 0xFF == ord("q"):
+        output_manager.log_system("User requested exit (pressed 'q')")
+        break
 
-if __name__ == "__main__":
-    main()
+# Clean up resources
+cap.release()
+cv2.destroyAllWindows()
+# Log final status to file 
+output_manager.log_system(f"Session ended. Processed {frame_count} frames, captured {snapshot_count} snapshots.")
+
+# Give a moment for any pending operations to complete
+time.sleep(0.5)
+
+# Signal the worker thread to exit and wait for it to finish
+analysis_queue.put(None)
+analysis_thread.join(timeout=5.0)  # Wait up to 5 seconds for thread to finish
+
+# Close the MongoDB connection last
+output_manager.close()

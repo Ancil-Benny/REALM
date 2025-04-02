@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css' rel="stylesheet">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+     <link rel="stylesheet" href="listingnew-base.css">
+     <link rel="stylesheet" href="listingnew-cards.css">
+     <link rel="stylesheet" href="listingnew-forms.css">
+     <link rel="stylesheet" href="../chatbot/chatbot.css">
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <title>Listing</title>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="dropdown">
+        <a class="dropbtn">LISTINGS</a>
+        <div class="dropdown-content">
+          <div id="listedlink">LISTED</div>
+          <div id="listedaddlink">ADD</div>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <a class="dropbtn">REQUESTS</a>
+        <div class="dropdown-content">
+        <div id="requestedlink">REQUESTED</div>
+        <div id="requestnewlink">NEW</div>
+        </div>
+    </div>
+
+    <div class="navrightelements">
+      <div id="navrighttextlink">ACCESS</div>
+    <div id="profilelink">profile</div>
+    <div id="logoutlink"><i class='bx bx-log-out'></i></div>
+    </div>
+</div>
+ <!-------------------------------------------------------------------------------->
+ <div class="arrow-container arrow-hidden">
+ <div class="arrow-container">
+  <i class='bx bxs-chevron-up'></i>
+</div>
+</div>
+ <div class="navbelowcontainer">
+  <div class="text-container">
+    <h1><span class="line">welcome</span><br><span class="line">find or list</span><br> <span class="line">your items</span></h1>
+    <p><span class="line">find the item from categories below or list the items you found or request a new item</span></p>
+</div>
+  <img src="./images/listmainimg2.jpg" alt="Description of image" class="nav-image">
+ </div>
+
+
+ 
+ <!------------------------------------------------------------------------------->
+
+ <div class="marquee category-container">
+  <div class="category stroke">Electronics</div>
+  <div class="category stroke">Accessories</div>
+  
+
+  
+</div>
+
+<div class="marquee2 category-container">
+  <div class="category fill">Stationery</div>
+  <div class="category fill">Fashion</div>
+  <div class="category fill">Documents</div>
+</div>
+
+    <!---------------------------------------------------->
+
+    <div class="search-container">
+      <form action="" class="search-formmain">
+        <input type="search" required placeholder="Search">
+      </form>
+      <button type="submit" class="search-button">Search</button>
+    </div>
+   <!----------------------------------------------------------------->
+    <div class="listedContainer">
+      <h1 class="ConHeadings">Listed Items</h1>
+      <P class="ConDesc">find your lost item reported here.</P>
+      <div class="container">
+        <p id="searchMessage"></p>
+ <!--cards-->
+ </div>
+  </div>
+    <!----------------------------------------------------------------->
+
+
+     <!-------------------------------------------------------------------------------->
+     <div class="addcontainer">
+      <h1 class="ConHeadings">Report New Items</h1>
+      <P class="ConDesc">report new item found from these categories</P>
+      <p id="searchMessage"></p>
+     <!--lists-->
+     </div>
+ <!-------------------------------------------------------------------------------->
+      <div class="requestsContainer">
+        <h1 class="ConHeadings">Requested Items</h1>
+        <P class="ConDesc">report a item requested here</P>
+        <div class="containerreq">
+          <p id="searchMessage"></p>
+       <!--creat card function is inherited from  listed container-->
+        </div>
+        </div>
+
+ <!-------------------------------------------------------------------------------->
+<div class="newcontainer">
+  <h1 class="ConHeadings">Add New Requests</h1>
+  <P class="ConDesc">add a new request for lost item from these categories</P>
+  <p id="searchMessage"></p>
+ <!--lists-->
+</div>
+ <!-------------------------------------------------------------------------------->
+ <div class="questioncontainer">
+  
+ <!--questions of new-->
+</div>
+ <!-------------------------------------------------------------------------------->
+ <div class="questioncontainernew">
+<!--questions of add-->
+ </div>
+   <!-------------------------------------------------------------------------------->
+ 
+<!-------------------------------------------------------------------------------->
+  <div class="dividercontainer">
+  
+      </div>
+  <!-------------------------------------------------------------------------------->
+  <div class="listsfooter">
+<div id="footerlogo">REALM</div>
+<div id="footertext">© 2025 Retrieval and Listing Modules</div>
+  </div>
+  <!-------------------------------------------------------------------------------->
+  
+  <!-- Floating chat button -->
+  <button class="chatApp-button" id="chatApp-button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
+  </button>
+
+  <!-- Chat interface (initially hidden) -->
+  <div class="chatApp-container" id="chatApp-container">
+      <div class="chatApp-panel">
+          <!-- Chat header -->
+          <div class="chatApp-header">
+              <h3>REALM BOT</h3>
+              <div class="chatApp-header-actions">
+                  <span id="chatApp-userInfoDisplay">Auto-Vision</span>
+                  <button class="chatApp-close-button" id="chatApp-close-button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <line x1="18" y1="6" x2="6" y2="18"></line>
+                          <line x1="6" y1="6" x2="18" y2="18"></line>
+                      </svg>
+                  </button>
+              </div>
+          </div>
+
+          <!-- Chat messages -->
+          <div class="chatApp-messages" id="chatApp-messages">
+              <div class="chatApp-message chatApp-bot-message">
+                  <p>Hello! I can help you find information about objects detected by the vision system.</p>
+              </div>
+          </div>
+
+          <!-- Chat interaction area -->
+          <div class="chatApp-interaction" id="chatApp-interaction">
+              <!-- dynamic insertion-->
+          </div>
+          
+          <!-- Answer summary (initially hidden) -->
+          <div class="chatApp-answer-summary" id="chatApp-answer-summary" style="display: none;">
+              <h4>Your search criteria:</h4>
+              <div class="chatApp-summary-content" id="chatApp-summary-content">
+                  <!-- Summary content -->
+              </div>
+          </div>
+
+          <!-- Search results area (initially hidden) -->
+          <div class="chatApp-search-results" id="chatApp-search-results" style="display: none;">
+              <div class="chatApp-results-header">
+                  <h4>Search Results</h4>
+                  <button id="chatApp-back-button" class="chatApp-text-button">Back to Search</button>
+              </div>
+              <div class="chatApp-results-list" id="chatApp-results-list">
+                  <!-- Results  -->
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <script src="../chatbot/chatbot.js"></script>
+    <script src="listing-ui.js"></script>
+    <script src="listingnew.js"></script>
+    <script src="listing-sections.js"></script>
+    <script src="listing-cards.js"></script>
+    <script src="listing-lists.js"></script>
+    <script src="listing-verification.js"></script>
+    <script src="listing-search.js"></script>
+    <script src="listing-api.js"></script>
+</body>
+</html>

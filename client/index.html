@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Add resource hints -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    
+    <!-- Preload critical fonts -->
+    <link rel="preload" as="font" href="./fonts/loaded.ttf" type="font/ttf" crossorigin>
+    
+    <link rel="stylesheet" href="style.css">
+    <!-- Defer non-critical CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet' media="print" onload="this.media='all'">
+    <style>
+      #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    color: #fff;
+}
+
+    </style>
+</head>
+<body>
+    
+    <div id="cursor"></div>
+    <div id="circle"></div>
+    <div id="preloader">
+      <div class="loader"></div>
+      <div id="typingText"></div>
+        <div id="progress">0%</div>
+        <progress id="progressBar" value="0" max="100"></progress>
+    <div id="scrollText">Scroll Up To Start</div>
+    <h1 class="logodev">dev by GP-002</h1>
+        </div>
+        <div id="mainPage">
+            <nav>
+                <div id="logo"></div>
+                <ul>
+                  <li><a href="./followup.html" data-hover="EXPLORE"><span>EXPLORE</span></a></li>
+                  <li><a href="./login/login.html" data-hover="LOGIN"><span>LOGIN</span></a></li>
+                  <li><a href="./login/login.html" data-hover="SIGN UP"><span>SIGN UP</span></a></li>
+                  <li><a href="about.html" data-hover="ABOUT"><span>ABOUT</span></a></li>
+              </ul>
+
+              </nav>
+              <div id="maindiv1">
+                <p id="mouseX"></p>
+                <p id="mouseY"></p>
+                <div id="graph">
+                  <div id="x-axis"></div>
+                  <div id="y-axis"></div>
+              </div>
+              <!--------------------------->
+              <div class="arrow-container">
+                <i class='bx bxs-chevron-right' id="arrowright"></i>
+            </div>
+            <!--------------------------->
+            <div class="hover-container">
+              <span>HOVER</span>
+              <hr class="line">
+              <div class="dot"></div>
+          </div>
+          <!-------------right angles line-------------->
+          <div class="line-container">
+            <div class="horizontal-line"></div>
+            <div class="vertical-line"></div>
+            <div class="dot2"></div>
+        </div>
+        <!-------------vertical line-------------->
+        <div class="line-container2">
+          <div class="vertical-line2"></div>
+          <div class="dot3"></div>
+      </div>
+        <!--------------------------->
+                <p  id="scrollen">MOVE++</p>
+              <h2 id="maindivh2">WELCOME TO</h2>
+                <h1 id="maindivlogo"><i>REALM</i></h1>
+              <p id = "maindivp">RETRIEVAL AND LISTING MANAGEMENT</p>
+              <h1 class="logodevV">DEVELOPED BY GP-002</h1>
+            </div>
+        </div>
+       <!--------------------------------------------------------------------------------------->
+    
+    <!-- Load  libraries -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script defer src="https://unpkg.com/split-type"></script>
+    <script defer src="script.js"></script>
+</body>
+</html>
